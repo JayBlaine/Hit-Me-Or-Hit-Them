@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="297.0" prefWidth="565.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.warController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e1e1e" height="89.0" layoutX="86.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+      <Rectangle fx:id="lbldeck" arcHeight="5.0" arcWidth="5.0" fill="#1e1e1e" height="89.0" layoutX="427.0" layoutY="134.0" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+      <Label fx:id="txtHelp" layoutX="120.0" layoutY="7.0" prefHeight="115.0" prefWidth="341.0" text="Let's play War! War is a game where you must control all 52 cards in the deck. In oder to gain the oppnent's deck you must flip a card higher than them by pressing the &quot;Flip&quot; button, then press the &quot;Collect&quot; button to start the next round. If you both flip a card that is equal in value then three cards from each of the decks will be put face down and then a card will be flipped to determine who wins all eight cards." textAlignment="CENTER" visible="false" wrapText="true">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font></Label>
+      <Rectangle fx:id="pflip" arcHeight="5.0" arcWidth="5.0" fill="#f8f6f6" height="89.0" layoutX="166.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="69.0" />
+      <Rectangle fx:id="dflip" arcHeight="5.0" arcWidth="5.0" fill="#eee8e8" height="89.0" layoutX="347.0" layoutY="134.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="69.0" />
+      <Label fx:id="lblp" layoutX="177.0" layoutY="171.0" prefHeight="14.0" prefWidth="47.0" />
+      <Label fx:id="lblpDeck" layoutX="97.0" layoutY="180.0" prefHeight="14.0" prefWidth="47.0" />
+      <Label fx:id="lbld" layoutX="358.0" layoutY="171.0" prefHeight="14.0" prefWidth="47.0" />
+      <Label fx:id="lbldDdeck" layoutX="438.0" layoutY="171.0" prefHeight="14.0" prefWidth="47.0" />
+      <Button fx:id="btnFlip" layoutX="250.0" layoutY="138.0" mnemonicParsing="false" onAction="#flipHandle" text="Flip" />
+      <Button fx:id="btnCollect" layoutX="291.0" layoutY="138.0" mnemonicParsing="false" onAction="#collectHandle" text="Collect" />
+      <Button layoutX="245.0" layoutY="214.0" mnemonicParsing="false" onAction="#returnHandle" text="Return to Menu" />
+      <Rectangle fx:id="pw1" arcHeight="5.0" arcWidth="5.0" fill="#fcfcfc" height="33.0" layoutY="267.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="69.0" />
+      <Rectangle fx:id="pw2" arcHeight="5.0" arcWidth="5.0" fill="#f7f9fc" height="33.0" layoutX="63.0" layoutY="267.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="69.0" />
+      <Rectangle fx:id="pw3" arcHeight="5.0" arcWidth="5.0" fill="#f9fcff" height="33.0" layoutX="132.0" layoutY="267.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="69.0" />
+      <Rectangle fx:id="dw3" arcHeight="5.0" arcWidth="5.0" fill="#eff0f2" height="33.0" layoutX="496.0" layoutY="264.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="69.0" />
+      <Rectangle fx:id="dw2" arcHeight="5.0" arcWidth="5.0" fill="#fefeff" height="33.0" layoutX="427.0" layoutY="264.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="69.0" />
+      <Rectangle fx:id="dw1" arcHeight="5.0" arcWidth="5.0" fill="#fcfcfc" height="33.0" layoutX="358.0" layoutY="264.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="69.0" />
+      <Label fx:id="lblpw1" layoutX="11.0" layoutY="274.0" prefHeight="14.0" prefWidth="47.0" />
+      <Label fx:id="lblpw2" layoutX="75.0" layoutY="276.0" prefHeight="14.0" prefWidth="47.0" />
+      <Label fx:id="lblpw3" layoutX="143.0" layoutY="273.0" prefHeight="14.0" prefWidth="47.0" />
+      <Label fx:id="lbldw3" layoutX="510.0" layoutY="274.0" prefHeight="14.0" prefWidth="47.0" />
+      <Label fx:id="lbldw2" layoutX="437.0" layoutY="275.0" prefHeight="14.0" prefWidth="47.0" />
+      <Label fx:id="lbldw1" layoutX="369.0" layoutY="273.0" prefHeight="14.0" prefWidth="47.0" />
+      <Button fx:id="btnFlip1" layoutX="275.0" layoutY="176.0" mnemonicParsing="false" onAction="#helpHandle" text="Help" />
+   </children>
+</AnchorPane>

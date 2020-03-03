@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="297.0" prefWidth="565.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.blackJackController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="69.0" layoutX="14.0" layoutY="155.0" stroke="BLACK" strokeType="INSIDE" width="62.0" />
+      <Label fx:id="lblDeck" layoutX="20.0" layoutY="183.0" prefHeight="14.0" prefWidth="50.0" textAlignment="CENTER" wrapText="true" />
+      <Rectangle fx:id="p1" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f4f6f8" height="27.0" layoutX="69.0" layoutY="330.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
+      <Rectangle fx:id="p3" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f7f9fc" height="27.0" layoutX="224.0" layoutY="330.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
+      <Rectangle fx:id="p2" arcHeight="5.0" arcWidth="5.0" disable="true" fill="WHITE" height="27.0" layoutX="147.0" layoutY="330.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
+      <Rectangle fx:id="p4" arcHeight="5.0" arcWidth="5.0" disable="true" fill="WHITE" height="27.0" layoutX="301.0" layoutY="330.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
+      <Rectangle fx:id="p5" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f8fafc" height="27.0" layoutX="378.0" layoutY="330.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
+      <Label layoutX="5.0" layoutY="330.0" prefHeight="27.0" prefWidth="62.0" text="Your Hand: " textFill="#fcf7f7">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblp1" layoutX="77.0" layoutY="336.0" prefHeight="14.0" prefWidth="62.0" textAlignment="CENTER" wrapText="true" />
+      <Label fx:id="lblp2" layoutX="147.0" layoutY="329.0" prefHeight="14.0" prefWidth="77.0" />
+      <Label fx:id="lblp3" layoutX="224.0" layoutY="329.0" prefHeight="14.0" prefWidth="77.0" />
+      <Label fx:id="lblp4" layoutX="301.0" layoutY="329.0" prefHeight="14.0" prefWidth="77.0" />
+      <Label fx:id="lblp5" layoutX="378.0" layoutY="329.0" prefHeight="14.0" prefWidth="77.0" />
+      <Button fx:id="btnHit" layoutX="117.0" layoutY="213.0" mnemonicParsing="false" onAction="#hitAction" text="Hit" />
+      <Button fx:id="btnHold" layoutX="202.0" layoutY="213.0" mnemonicParsing="false" onAction="#holdAction" text="Hold" />
+      <Rectangle fx:id="d5" arcHeight="5.0" arcWidth="5.0" fill="#f4f6f8" height="27.0" layoutX="1.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
+      <Rectangle fx:id="d4" arcHeight="5.0" arcWidth="5.0" fill="#f4f6f8" height="27.0" layoutX="78.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
+      <Rectangle fx:id="d3" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f4f6f8" height="27.0" layoutX="150.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
+      <Rectangle fx:id="d2" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f4f6f8" height="27.0" layoutX="224.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
+      <Rectangle fx:id="d1" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f4f6f8" height="27.0" layoutX="290.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
+      <Label layoutX="492.0" layoutY="1.0" prefHeight="27.0" prefWidth="70.0" text="Dealer's Hand" textFill="#fcf7f7">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbld5" layoutX="1.0" layoutY="8.0" prefHeight="14.0" prefWidth="70.0" />
+      <Label fx:id="lbld4" layoutX="80.0" layoutY="3.0" prefHeight="14.0" prefWidth="70.0" />
+      <Label fx:id="lbld3" layoutX="152.0" layoutY="4.0" prefHeight="14.0" prefWidth="70.0" />
+      <Label fx:id="lbld2" layoutX="221.0" layoutY="5.0" prefHeight="14.0" prefWidth="70.0" />
+      <Label fx:id="lbld1" layoutX="294.0" layoutY="4.0" prefHeight="14.0" prefWidth="70.0" />
+      <Label fx:id="txtHelp" layoutX="121.0" layoutY="132.0" prefHeight="69.0" prefWidth="350.0" text="BlackJack is a game where your hand must add up to 21. One of the dealer's cards will be shown and all of your cards wil be displayed. Press the &quot;Hit&quot; button to add another card to your hand. Press the &quot;Hold&quot; button if you are satisfied with your hand." textAlignment="CENTER" textFill="#f8f7f7" visible="false" wrapText="true" />
+      <Button fx:id="btnReturn" layoutX="429.0" layoutY="213.0" mnemonicParsing="false" onAction="#returnAction" text="Return to Menu" />
+      <Button fx:id="btnHelp" layoutX="340.0" layoutY="213.0" mnemonicParsing="false" onAction="#helpAction" text="Help" />
+   </children>
+</AnchorPane>
