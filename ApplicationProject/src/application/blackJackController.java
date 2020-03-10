@@ -64,7 +64,8 @@ public class blackJackController
 	@FXML
 	private Label txtHelp;
 	
-	
+	//Add round mechanic?
+	//Maybe add betting??
 	@FXML
     private void initialize()
     {
@@ -75,12 +76,16 @@ public class blackJackController
 	private void hitAction(ActionEvent event)
     {
 		System.out.println("hit");
+		//Convert to label, implement randomness into deck shuffling
+		
     }
 	
 	@FXML
 	private void holdAction(ActionEvent event)
     {
 		System.out.println("hold hit");
+		//Convert to label, implement computer actions/comparison between
+		//player and cpu.
     }
 	
 	@FXML
