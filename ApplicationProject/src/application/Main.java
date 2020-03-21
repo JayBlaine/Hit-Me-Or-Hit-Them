@@ -44,9 +44,6 @@ public class Main extends Application
 	{
 		launch(args);
 		
-		ArrayList <String> deck= Card.getDeck();
-		
-		Card.displayCards(deck);
 	
 	}
 }
