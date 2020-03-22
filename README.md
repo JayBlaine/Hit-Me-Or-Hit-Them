@@ -4,4 +4,4 @@ When updating the project you can not use the website. I have been updating the 
 For step 4 I typically type git add Applicatoion Project* so that anything for the Application Project is committed (At this point nothing is committed yet we are just gathering the files we want to commit)
 For step 5 please write a meaningful message so we know what you've done. I think there is a limited amount of characters so just keep it short and sweet
 For step 6 I type git push origin master and it will commit the files to the repository. Before exiting I highly suggest you check github to make sure everything is committed
-https://help.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line
+https://help.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line 
