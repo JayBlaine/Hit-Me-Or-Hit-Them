@@ -73,7 +73,12 @@ public class blackJackController
     }
 	
 	@FXML
-	private void hitAction(ActionEvent event)
+	private void changeDifficulty(ActionEvent event)
+	{
+		
+	}
+	@FXML
+	private void slapAction(ActionEvent event)
     {
 		System.out.println("hit");
 		//Convert to label, implement randomness into deck shuffling
@@ -81,7 +86,7 @@ public class blackJackController
     }
 	
 	@FXML
-	private void holdAction(ActionEvent event)
+	private void flipAction(ActionEvent event)
     {
 		System.out.println("hold hit");
 		//Convert to label, implement computer actions/comparison between
