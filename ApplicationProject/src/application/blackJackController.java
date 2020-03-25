@@ -63,6 +63,8 @@ public class blackJackController
 	private Label lblDeck;
 	@FXML
 	private Label txtHelp;
+	@FXML
+	private Label lblDiff;
 	
 	//Add round mechanic?
 	//Maybe add betting??
@@ -75,6 +77,7 @@ public class blackJackController
 	@FXML
 	private void changeDifficulty(ActionEvent event)
 	{
+		//Edit lblDiff to display difficulty (Easy, medium, hard, each editing difficulty object (TODO)
 		
 	}
 	@FXML
