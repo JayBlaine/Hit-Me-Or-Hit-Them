@@ -35,14 +35,14 @@
     <Label fx:id="lblp3" layoutX="224.0" layoutY="329.0" prefHeight="14.0" prefWidth="77.0" />
     <Label fx:id="lblp4" layoutX="301.0" layoutY="329.0" prefHeight="14.0" prefWidth="77.0" />
     <Label fx:id="lblp5" layoutX="378.0" layoutY="329.0" prefHeight="14.0" prefWidth="77.0" />
-    <Button id="btnFlip" fx:id="btnFlip" layoutX="177.0" layoutY="213.0" mnemonicParsing="false" onAction="#flipAction" prefWidth="70.0" text="Flip" />
-    <Button id="btnSlap" fx:id="btnSlap" layoutX="256.0" layoutY="213.0" mnemonicParsing="false" onAction="#slapAction" text="Slap" />
+    <Button fx:id="btnFlip" layoutX="177.0" layoutY="213.0" mnemonicParsing="false" onAction="#flipAction" prefWidth="70.0" text="Flip" />
+    <Button fx:id="btnSlap" layoutX="256.0" layoutY="213.0" mnemonicParsing="false" onAction="#slapAction" text="Slap" />
     <Rectangle fx:id="d5" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="27.0" layoutX="1.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
     <Rectangle fx:id="d4" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="27.0" layoutX="78.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
     <Rectangle fx:id="d3" arcHeight="5.0" arcWidth="5.0" disable="true" fill="$x1" height="27.0" layoutX="150.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
     <Rectangle fx:id="d2" arcHeight="5.0" arcWidth="5.0" disable="true" fill="$x1" height="27.0" layoutX="224.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
     <Rectangle fx:id="d1" arcHeight="5.0" arcWidth="5.0" disable="true" fill="$x1" height="27.0" layoutX="290.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
-    <Label font="$x2" layoutX="492.0" layoutY="1.0" prefHeight="27.0" prefWidth="70.0" text="Dealer's Hand" textFill="$x3" />
+    <Label fx:id="lblDiff" font="$x2" layoutX="495.0" layoutY="1.0" prefHeight="27.0" prefWidth="70.0" text="Easy" textAlignment="CENTER" textFill="$x3" />
     <Label fx:id="lbld5" layoutX="1.0" layoutY="8.0" prefHeight="14.0" prefWidth="70.0" />
     <Label fx:id="lbld4" layoutX="80.0" layoutY="3.0" prefHeight="14.0" prefWidth="70.0" />
     <Label fx:id="lbld3" layoutX="152.0" layoutY="4.0" prefHeight="14.0" prefWidth="70.0" />
