@@ -63,8 +63,11 @@ public class blackJackController
 	private Label lblDeck;
 	@FXML
 	private Label txtHelp;
+	@FXML
+	private Label lblDiff;
 	
-	
+	//Add round mechanic?
+	//Maybe add betting??
 	@FXML
     private void initialize()
     {
@@ -72,15 +75,25 @@ public class blackJackController
     }
 	
 	@FXML
-	private void hitAction(ActionEvent event)
+	private void changeDifficulty(ActionEvent event)
+	{
+		//Edit lblDiff to display difficulty (Easy, medium, hard, each editing difficulty object (TODO)
+		
+	}
+	@FXML
+	private void slapAction(ActionEvent event)
     {
 		System.out.println("hit");
+		//Convert to label, implement randomness into deck shuffling
+		
     }
 	
 	@FXML
-	private void holdAction(ActionEvent event)
+	private void flipAction(ActionEvent event)
     {
 		System.out.println("hold hit");
+		//Convert to label, implement computer actions/comparison between
+		//player and cpu.
     }
 	
 	@FXML
