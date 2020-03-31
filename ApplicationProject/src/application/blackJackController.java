@@ -73,7 +73,6 @@ public class blackJackController
     {
 		//Testing computer class
 		Computer cpu = new Computer(1);
-		ArrayList cpuDeck = cpu.getComputerDeck();
     }
 	
 	@FXML
