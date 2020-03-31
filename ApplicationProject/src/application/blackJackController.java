@@ -71,7 +71,9 @@ public class blackJackController
 	@FXML
     private void initialize()
     {
-		
+		//Testing computer class
+		Computer cpu = new Computer(1);
+		ArrayList cpuDeck = cpu.getComputerDeck();
     }
 	
 	@FXML
