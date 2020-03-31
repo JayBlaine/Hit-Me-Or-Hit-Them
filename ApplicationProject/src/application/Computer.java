@@ -15,11 +15,11 @@ public class Computer {
 		
 		switch (diff) {
 			case 1:
-				responseTime = implementChaos;
+				responseTime = implementChaos + 1;
 			case 2:
-				responseTime = implementChaos * 0.5;
+				responseTime = (implementChaos * 0.5) + 0.75;
 			case 3:
-				responseTime = implementChaos * 0.33;
+				responseTime = (implementChaos * 0.33) + 0.5;
 		}
 	}
 	
