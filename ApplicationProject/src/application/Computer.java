@@ -1,6 +1,5 @@
 package application;
 
-import java.util.ArrayList;
 
 public class Computer extends Card {
 	
@@ -15,8 +14,8 @@ public class Computer extends Card {
 		deck = new Card();
 		
 	}
-	public void setDifficulty() {
-		switch (diff) {
+	public void setDifficulty(int newDiff) {
+		switch (newDiff) {
 			case 1:
 				responseTime = implementChaos + 1;
 			case 2:
@@ -24,7 +23,10 @@ public class Computer extends Card {
 			case 3:
 				responseTime = (implementChaos * 0.33) + 0.5;
 			}
+		//No need for default, only 1,2,3 are possible
 	}
+	public double getDifficulty() {
+		return diff;}
 	public double getResponseTime() {
 		return responseTime;}
 	public void setResponseTime(double newTime) {

@@ -67,34 +67,38 @@ public class blackJackController
 	private Label lblDiff;
 	
 	private int diffInt = 1;
+	Computer cpu = new Computer(diffInt);
 	//Add round mechanic?
 	//Maybe add betting??
 	@FXML
     private void initialize()
     {
 		//Testing computer class
-		Computer cpu = new Computer(diffInt);
+		
 		Card player = new Card();
     }
 	
 	@FXML
 	private void changeDifficulty(ActionEvent event)
 	{
+		//Changes difficulty based on what's already shown
+		//diffInt purely for computer use.
 		switch (diffInt) {
-		case 1:
-			diffInt = 2;
-			lblDiff.setText("Medium");
-			break;
-		case 2:
-			diffInt = 3;
-			lblDiff.setText("Hard");
-			break;
-		case 3:
-			diffInt = 1;
-			lblDiff.setText("Easy");
-			break;
+			case 1:
+				diffInt = 2;
+				lblDiff.setText("Medium");
+				break;
+			case 2:
+				diffInt = 3;
+				lblDiff.setText("Hard");
+				break;
+			case 3:
+				diffInt = 1;
+				lblDiff.setText("Easy");
+				break;
 			
 		}
+		cpu.setDifficulty(diffInt);
 		//Edit lblDiff to display difficulty (Easy, medium, hard, each editing difficulty object (TODO)
 		
 	}
