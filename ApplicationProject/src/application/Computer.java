@@ -7,7 +7,7 @@ public class Computer extends Card {
 	private Card deck;
 	private double responseTime;
 	private int diff;
-	double implementChaos = Math.random();
+	private double implementChaos = Math.random();
 	
 	public Computer(int iDiff) {
 		//1 for easy, 2 for medium, 3 for hard
