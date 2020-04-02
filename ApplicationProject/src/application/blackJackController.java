@@ -74,6 +74,7 @@ public class blackJackController
     {
 		//Testing computer class
 		Computer cpu = new Computer(diffInt);
+		Card player = new Card();
     }
 	
 	@FXML
