@@ -5,6 +5,7 @@ package application;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Stack;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -76,6 +77,8 @@ public class blackJackController
 		//Testing computer class
 		
 		Card player = new Card();
+		Stack centerPile = new Stack();
+		//For center pile. TODO: FIND WAY TO IMPLEMENT STACK WITH CARD OBJECTS
     }
 	
 	@FXML
