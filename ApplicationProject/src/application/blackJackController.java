@@ -77,7 +77,7 @@ public class blackJackController
 		//Testing computer class
 		
 		Card player = new Card();
-		Stack centerPile = new Stack();
+		Stack<String> centerPile = new Stack<String>();
 		//For center pile. TODO: FIND WAY TO IMPLEMENT STACK WITH CARD OBJECTS
     }
 	
