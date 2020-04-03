@@ -1,9 +1,10 @@
 package application;
 
+import java.util.ArrayList;
 
 public class Computer extends Card {
 	
-	private Card deck;
+	private ArrayList<String> deck = Card.getDeck();
 	private double responseTime;
 	private int diff;
 	private double implementChaos = Math.random();
@@ -11,7 +12,7 @@ public class Computer extends Card {
 	public Computer(int iDiff) {
 		//1 for easy, 2 for medium, 3 for hard
 		diff = iDiff;
-		deck = new Card();
+		//deck = new Card();
 		
 	}
 	public void setDifficulty(int newDiff) {
