@@ -74,6 +74,8 @@ public class blackJackController
 	ArrayList<String> computer = Card.getDeck();
 	
 	Stack<String> centerPile = new Stack<String>();
+	
+	private boolean isSlappable = false;
 	//Add round mechanic?
 	@FXML
     private void initialize()
@@ -113,7 +115,7 @@ public class blackJackController
     {
 		System.out.println("hit");
 		String test = centerPile.peek();
-		if(test.equals("Jack")) {
+		if(isSlappable) {
 			//Maybe call a function to measure button press
 			//response time vs computer?
 			
@@ -137,10 +139,28 @@ public class blackJackController
 		System.out.println("hold hit");
 		//Convert to label, implement computer actions/comparison between
 		//player and cpu.
-		//centerPile.push(cpu.)
+		centerPile.push(player.get(0));
+		player.remove(0);
+		
+		if(centerPile.peek().equals("Jack"))
+			isSlappable = true;	
+		else
+			isSlappable = false;
+		computerTurn();
 		//TODO: NEED TO REFACTOR CARD CODE, SOME METHODS DO TOO MUCH
 		//IE CAN'T ACCESS TOP CARD
     }
+	
+	private void computerTurn()
+	{
+		centerPile.push(computer.get(0));
+		computer.remove(0);
+		
+		if(centerPile.peek().equals("Jack"))
+			isSlappable = true;
+		else
+			isSlappable = false;
+	}
 	
 	@FXML
 	private void returnAction(ActionEvent event)

@@ -32,10 +32,12 @@ public class Computer extends Card {
 		return responseTime;}
 	public void setResponseTime(double newTime) {
 		responseTime = newTime;}
+	/*
 	public Card getComputerDeck() {
 		return deck;}
 	public void setDeck(Card newDeck) {
 		deck = newDeck;}
+		*/
 	
 
 }
