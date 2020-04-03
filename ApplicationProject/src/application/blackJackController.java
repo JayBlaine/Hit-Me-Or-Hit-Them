@@ -69,6 +69,8 @@ public class blackJackController
 	
 	private int diffInt = 1;
 	Computer cpu = new Computer(diffInt);
+	Card player = new Card();
+	Stack<String> centerPile = new Stack<String>();
 	//Add round mechanic?
 	//Maybe add betting??
 	@FXML
@@ -76,8 +78,7 @@ public class blackJackController
     {
 		//Testing computer class
 		
-		Card player = new Card();
-		Stack<String> centerPile = new Stack<String>();
+		
 		//For center pile. TODO: FIND WAY TO IMPLEMENT STACK WITH CARD OBJECTS
     }
 	
@@ -109,6 +110,21 @@ public class blackJackController
 	private void slapAction(ActionEvent event)
     {
 		System.out.println("hit");
+		String test = centerPile.peek();
+		if(test.equals("Jack")) {
+			//Maybe call a function to measure button press
+			//response time vs computer?
+			
+			//WINNING STUFF
+			//Implement bot response time by waiting seconds corresponding 
+			//to responseTime
+			//may need to do somewhere else outside of button, maybe initialize??
+		}
+		else {
+			//Implement code for either affecting score or moving all cards in 
+			//stack to the player's deck
+			
+		}
 		//Convert to label, implement randomness into deck shuffling
 		
     }
@@ -119,6 +135,9 @@ public class blackJackController
 		System.out.println("hold hit");
 		//Convert to label, implement computer actions/comparison between
 		//player and cpu.
+		//centerPile.push(cpu.)
+		//TODO: NEED TO REFACTOR CARD CODE, SOME METHODS DO TOO MUCH
+		//IE CAN'T ACCESS TOP CARD
     }
 	
 	@FXML
