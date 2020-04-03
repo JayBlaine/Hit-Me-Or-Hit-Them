@@ -69,10 +69,12 @@ public class blackJackController
 	
 	private int diffInt = 1;
 	Computer cpu = new Computer(diffInt);
-	ArrayList<String> player = Card.getDeck();
+	
+	ArrayList<String> player = Computer.getDeck();
+	ArrayList<String> computer = Card.getDeck();
+	
 	Stack<String> centerPile = new Stack<String>();
 	//Add round mechanic?
-	//Maybe add betting??
 	@FXML
     private void initialize()
     {
