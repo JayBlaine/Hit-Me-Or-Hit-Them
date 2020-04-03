@@ -6,10 +6,12 @@ package application;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Stack;
+import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
@@ -66,6 +68,10 @@ public class blackJackController
 	private Label txtHelp;
 	@FXML
 	private Label lblDiff;
+	@FXML
+	private Button btnFlip;
+	@FXML
+	private Button btnSlap;
 	
 	private int diffInt = 1;
 	Computer cpu = new Computer(diffInt);
@@ -141,11 +147,23 @@ public class blackJackController
 		//player and cpu.
 		centerPile.push(player.get(0));
 		player.remove(0);
+		//Display CENTERPILE
+		btnFlip.disarm();
+		//TODO: NOT WORKING^^^
 		
 		if(centerPile.peek().equals("Jack"))
 			isSlappable = true;	
 		else
 			isSlappable = false;
+		
+		try {
+			Thread.sleep(1000);
+			//TODO: SLEEP NOT WORKING TO DISARM BUTTON, ONLY DELAYS CLICK
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		computerTurn();
 		//TODO: NEED TO REFACTOR CARD CODE, SOME METHODS DO TOO MUCH
 		//IE CAN'T ACCESS TOP CARD
@@ -155,11 +173,16 @@ public class blackJackController
 	{
 		centerPile.push(computer.get(0));
 		computer.remove(0);
+		//Display CENTERPILE
+		
 		
 		if(centerPile.peek().equals("Jack"))
 			isSlappable = true;
 		else
 			isSlappable = false;
+		
+		
+		btnFlip.arm();
 	}
 	
 	@FXML
