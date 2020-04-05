@@ -82,12 +82,18 @@ public class blackJackController
 	
 	Stack<String> centerPile = new Stack<String>();
 	
+	private double startTime;
+	private double startSlap;
+	private double actualSlap;
+	
 	private boolean isSlappable = false;
 	//Add round mechanic?
 	@FXML
     private void initialize()
     {
 		//Testing computer class
+		startTime = System.currentTimeMillis();
+		System.out.println(startTime);
 		Card.shuffleDeck(player); //52
 		Card.shuffleDeck(computer); //52
 		
@@ -118,25 +124,37 @@ public class blackJackController
 		}
 		cpu.setDifficulty(diffInt);
 		//Edit lblDiff to display difficulty (Easy, medium, hard, each editing difficulty object (TODO)
-		
 	}
 	@FXML
 	private void slapAction(ActionEvent event)
     {
 		System.out.println("hit");
 		String test = centerPile.peek();
-		if(isSlappable) {
-			//Maybe call a function to measure button press
+		//May not need ^^
+		if(isSlappable)
+		{
+			actualSlap = System.currentTimeMillis();
+			
+			if(actualSlap - startSlap < cpu.getDifficulty() * 1000)
+			{
+				//Player gets the cards, beat cpu.
+			}
 			//response time vs computer?
 			
 			//WINNING STUFF
 			//Implement bot response time by waiting seconds corresponding 
 			//to responseTime
 			//may need to do somewhere else outside of button, maybe initialize??
+			else
+			{
+				//COmputer wins, gets the cards in stack to his deck.
+			}
 		}
-		else {
+		else 
+		{
+			//NOT A JACK
 			//Implement code for either affecting score or moving all cards in 
-			//stack to the player's deck
+			//stack to the computer's deck
 			
 		}
 		//Convert to label, implement randomness into deck shuffling
@@ -155,8 +173,10 @@ public class blackJackController
 		btnFlip.disarm();
 		//TODO: NOT WORKING^^^
 		
-		if(centerPile.peek().equals("Jack"))
-			isSlappable = true;	
+		if(centerPile.peek().equals("Jack")) {
+			startSlap = System.currentTimeMillis();
+			isSlappable = true;
+		}
 		else
 			isSlappable = false;
 		
@@ -182,7 +202,10 @@ public class blackJackController
 		
 		
 		if(centerPile.peek().equals("Jack"))
+		{
+			startSlap = System.currentTimeMillis();
 			isSlappable = true;
+		}
 		else
 			isSlappable = false;
 		
