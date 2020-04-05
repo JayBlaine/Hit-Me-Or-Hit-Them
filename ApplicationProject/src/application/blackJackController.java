@@ -76,6 +76,7 @@ public class blackJackController
 	private int diffInt = 1;
 	Computer cpu = new Computer(diffInt);
 	
+	//Card startingDeck = new Card();
 	ArrayList<String> player = Card.getDeck();
 	ArrayList<String> computer = Computer.getDeck();
 	
@@ -174,6 +175,7 @@ public class blackJackController
 	
 	private void computerTurn()
 	{
+		//MAYBE ADD LBL SAYING IT's COMPUTER TURN
 		centerPile.push(computer.get(0));
 		computer.remove(0);
 		//Display CENTERPILE
