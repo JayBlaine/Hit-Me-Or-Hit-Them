@@ -76,8 +76,8 @@ public class blackJackController
 	private int diffInt = 1;
 	Computer cpu = new Computer(diffInt);
 	
-	ArrayList<String> player = Computer.getDeck();
-	ArrayList<String> computer = Card.getDeck();
+	ArrayList<String> player = Card.getDeck();
+	ArrayList<String> computer = Computer.getDeck();
 	
 	Stack<String> centerPile = new Stack<String>();
 	
@@ -87,7 +87,10 @@ public class blackJackController
     private void initialize()
     {
 		//Testing computer class
+		Card.shuffleDeck(player); //52
+		Card.shuffleDeck(computer); //52
 		
+		//Maybe add number of cards left??
 		
 		//For center pile. TODO: FIND WAY TO IMPLEMENT STACK WITH CARD OBJECTS
     }
