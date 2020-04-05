@@ -207,7 +207,15 @@ public class blackJackController
 			isSlappable = true;
 		}
 		else
+		{
 			isSlappable = false;
+			
+			if(Math.random() > 0.95)
+			{
+				//Computer slaps when not a jack, player gets cards.
+			}
+			
+		}
 		
 		
 		btnFlip.arm();
