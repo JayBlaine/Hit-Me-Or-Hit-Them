@@ -100,7 +100,6 @@ public class blackJackController
 		
 		//Maybe add number of cards left??
 		
-		//For center pile. TODO: FIND WAY TO IMPLEMENT STACK WITH CARD OBJECTS
     }
 	
 	@FXML
@@ -201,6 +200,7 @@ public class blackJackController
 		
 		try {
 			Thread.sleep(1000);
+			btnFlip.disarm();
 			//TODO: SLEEP NOT WORKING TO DISARM BUTTON, ONLY DELAYS CLICK
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -208,8 +208,6 @@ public class blackJackController
 		}
 		
 		computerTurn();
-		//TODO: NEED TO REFACTOR CARD CODE, SOME METHODS DO TOO MUCH
-		//IE CAN'T ACCESS TOP CARD
     }
 	
 	private void computerTurn()
