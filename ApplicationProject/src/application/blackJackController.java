@@ -99,8 +99,8 @@ public class blackJackController
 		//^Testing^
 		
 		Card.shuffleDeck(startingDeck);
-		player=Card.dealCards(startingDeck, 26);
-		computer=Card.dealCards(startingDeck, 26);
+		player = Card.dealCards(startingDeck, 26);
+		computer = Card.dealCards(startingDeck, 26);
 		
 		//Maybe add number of cards left??
 		
