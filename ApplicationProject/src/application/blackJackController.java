@@ -217,7 +217,7 @@ public class blackJackController
 		stackCount++;
 		//Display CENTERPILE
 		
-		
+		//TODO: NOT JACK, SHOULD BE JACK WITH SOME STUFF
 		if(centerPile.peek().equals("Jack"))
 		{
 			startSlap = System.currentTimeMillis();
