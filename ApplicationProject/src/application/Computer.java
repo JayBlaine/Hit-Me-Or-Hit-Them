@@ -1,10 +1,10 @@
 package application;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class Computer extends Card {
 	
-	private ArrayList<String> deck = Card.getDeck();
+	//private ArrayList<String> deck = Card.getDeck();
 	private double responseTime;
 	private int diff;
 	private double implementChaos = Math.random();

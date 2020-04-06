@@ -10,6 +10,7 @@ import java.util.Stack;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
@@ -66,14 +67,25 @@ public class blackJackController
 	private Label txtHelp;
 	@FXML
 	private Label lblDiff;
+	@FXML
+	private Button btnFlip;
+	@FXML
+	private Button btnSlap;
 	
 	private int diffInt = 1;
 	Computer cpu = new Computer(diffInt);
 	
-	ArrayList<String> player = Computer.getDeck();
-	ArrayList<String> computer = Card.getDeck();
+	//Card startingDeck = new Card();
+	ArrayList<String> player = Card.getDeck();
+	ArrayList<String> computer = Computer.getDeck();
 	
 	Stack<String> centerPile = new Stack<String>();
+	
+	private double startTime;
+	private double startSlap;
+	private double actualSlap;
+	private int stackCount = 0;
+	//TODO: FOR CENTER STACK DISPLAY
 	
 	private boolean isSlappable = false;
 	//Add round mechanic?
@@ -81,7 +93,12 @@ public class blackJackController
     private void initialize()
     {
 		//Testing computer class
+		startTime = System.currentTimeMillis();
+		System.out.println(startTime);
+		Card.shuffleDeck(player); //52
+		Card.shuffleDeck(computer); //52
 		
+		//Maybe add number of cards left??
 		
 		//For center pile. TODO: FIND WAY TO IMPLEMENT STACK WITH CARD OBJECTS
     }
@@ -108,25 +125,50 @@ public class blackJackController
 		}
 		cpu.setDifficulty(diffInt);
 		//Edit lblDiff to display difficulty (Easy, medium, hard, each editing difficulty object (TODO)
-		
 	}
 	@FXML
 	private void slapAction(ActionEvent event)
     {
 		System.out.println("hit");
-		String test = centerPile.peek();
-		if(isSlappable) {
-			//Maybe call a function to measure button press
-			//response time vs computer?
+		//String test = centerPile.peek();
+		//May not need ^^
+		if(isSlappable)
+		{
+			actualSlap = System.currentTimeMillis();
 			
-			//WINNING STUFF
-			//Implement bot response time by waiting seconds corresponding 
-			//to responseTime
-			//may need to do somewhere else outside of button, maybe initialize??
+			if(actualSlap - startSlap < cpu.getDifficulty() * 1000)
+			{
+				while(!centerPile.isEmpty())
+				{
+					String szTemp = centerPile.pop();
+					player.add(szTemp);
+					stackCount = 0;
+				}
+				//Player gets the cards, beat cpu.
+			}
+			//response time vs computer?
+			else
+			{
+				while(!centerPile.isEmpty())
+				{
+					String szTemp = centerPile.pop();
+					computer.add(szTemp);
+					stackCount = 0;
+				}
+				//Computer wins, gets the cards in stack to his deck.
+			}
 		}
-		else {
+		else 
+		{
+			while(!centerPile.isEmpty())
+			{
+				String szTemp = centerPile.pop();
+				computer.add(szTemp);
+				stackCount = 0;
+			}
+			//NOT A JACK
 			//Implement code for either affecting score or moving all cards in 
-			//stack to the player's deck
+			//stack to the computer's deck
 			
 		}
 		//Convert to label, implement randomness into deck shuffling
@@ -141,11 +183,26 @@ public class blackJackController
 		//player and cpu.
 		centerPile.push(player.get(0));
 		player.remove(0);
+		stackCount++;
+		//Display CENTERPILE
+		btnFlip.disarm();
+		//TODO: NOT WORKING^^^
 		
-		if(centerPile.peek().equals("Jack"))
-			isSlappable = true;	
+		if(centerPile.peek().equals("Jack")) {
+			startSlap = System.currentTimeMillis();
+			isSlappable = true;
+		}
 		else
 			isSlappable = false;
+		
+		try {
+			Thread.sleep(1000);
+			//TODO: SLEEP NOT WORKING TO DISARM BUTTON, ONLY DELAYS CLICK
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		computerTurn();
 		//TODO: NEED TO REFACTOR CARD CODE, SOME METHODS DO TOO MUCH
 		//IE CAN'T ACCESS TOP CARD
@@ -153,13 +210,37 @@ public class blackJackController
 	
 	private void computerTurn()
 	{
+		//MAYBE ADD LBL SAYING IT's COMPUTER TURN
 		centerPile.push(computer.get(0));
 		computer.remove(0);
+		stackCount++;
+		//Display CENTERPILE
+		
 		
 		if(centerPile.peek().equals("Jack"))
+		{
+			startSlap = System.currentTimeMillis();
 			isSlappable = true;
+		}
 		else
+		{
 			isSlappable = false;
+			
+			if(Math.random() > 0.95)
+			{
+				while(!centerPile.isEmpty())
+				{
+					String szTemp = centerPile.pop();
+					player.add(szTemp);
+					stackCount = 0;
+				}
+				//Computer slaps when not a jack, player gets cards.
+			}
+			
+		}
+		
+		
+		btnFlip.arm();
 	}
 	
 	@FXML
