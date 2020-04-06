@@ -2,7 +2,7 @@ package application;
 
 //import java.util.ArrayList;
 
-public class Computer extends Card {
+public class Computer {
 	
 	//private ArrayList<String> deck = Card.getDeck();
 	private double responseTime;
