@@ -85,6 +85,7 @@ public class blackJackController
 	private double startTime;
 	private double startSlap;
 	private double actualSlap;
+	private int stackCount = 0;
 	
 	private boolean isSlappable = false;
 	//Add round mechanic?
@@ -137,21 +138,34 @@ public class blackJackController
 			
 			if(actualSlap - startSlap < cpu.getDifficulty() * 1000)
 			{
+				while(!centerPile.isEmpty())
+				{
+					String szTemp = centerPile.pop();
+					player.add(szTemp);
+					stackCount = 0;
+				}
 				//Player gets the cards, beat cpu.
 			}
 			//response time vs computer?
-			
-			//WINNING STUFF
-			//Implement bot response time by waiting seconds corresponding 
-			//to responseTime
-			//may need to do somewhere else outside of button, maybe initialize??
 			else
 			{
-				//COmputer wins, gets the cards in stack to his deck.
+				while(!centerPile.isEmpty())
+				{
+					String szTemp = centerPile.pop();
+					computer.add(szTemp);
+					stackCount = 0;
+				}
+				//Computer wins, gets the cards in stack to his deck.
 			}
 		}
 		else 
 		{
+			while(!centerPile.isEmpty())
+			{
+				String szTemp = centerPile.pop();
+				computer.add(szTemp);
+				stackCount = 0;
+			}
 			//NOT A JACK
 			//Implement code for either affecting score or moving all cards in 
 			//stack to the computer's deck
@@ -169,6 +183,7 @@ public class blackJackController
 		//player and cpu.
 		centerPile.push(player.get(0));
 		player.remove(0);
+		stackCount++;
 		//Display CENTERPILE
 		btnFlip.disarm();
 		//TODO: NOT WORKING^^^
@@ -198,6 +213,7 @@ public class blackJackController
 		//MAYBE ADD LBL SAYING IT's COMPUTER TURN
 		centerPile.push(computer.get(0));
 		computer.remove(0);
+		stackCount++;
 		//Display CENTERPILE
 		
 		
@@ -212,6 +228,12 @@ public class blackJackController
 			
 			if(Math.random() > 0.95)
 			{
+				while(!centerPile.isEmpty())
+				{
+					String szTemp = centerPile.pop();
+					player.add(szTemp);
+					stackCount = 0;
+				}
 				//Computer slaps when not a jack, player gets cards.
 			}
 			
