@@ -188,6 +188,7 @@ public class blackJackController
 		btnFlip.disarm();
 		//TODO: NOT WORKING^^^
 		
+		//TODO: NOT JACK, SHOULD BE JACK WITH SOME STUFF
 		if(centerPile.peek().equals("Jack")) {
 			startSlap = System.currentTimeMillis();
 			isSlappable = true;
