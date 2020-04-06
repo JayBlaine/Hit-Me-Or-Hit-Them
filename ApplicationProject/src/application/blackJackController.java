@@ -124,7 +124,6 @@ public class blackJackController
 			
 		}
 		cpu.setDifficulty(diffInt);
-		//Edit lblDiff to display difficulty (Easy, medium, hard, each editing difficulty object (TODO)
 	}
 	@FXML
 	private void slapAction(ActionEvent event)
@@ -167,11 +166,10 @@ public class blackJackController
 				stackCount = 0;
 			}
 			//NOT A JACK
-			//Implement code for either affecting score or moving all cards in 
-			//stack to the computer's deck
+			
 			
 		}
-		//Convert to label, implement randomness into deck shuffling
+		//Convert to label
 		
     }
 	
@@ -179,6 +177,11 @@ public class blackJackController
 	private void flipAction(ActionEvent event)
     {
 		System.out.println("hold hit");
+		
+		if(player.isEmpty() || computer.isEmpty())
+		{
+			//TODO: GAME OVER STUFF
+		}
 		//Convert to label, implement computer actions/comparison between
 		//player and cpu.
 		centerPile.push(player.get(0));
@@ -187,8 +190,6 @@ public class blackJackController
 		//Display CENTERPILE
 		btnFlip.disarm();
 		//TODO: NOT WORKING^^^
-		
-		//TODO: ADD CHECKING FOR IF USER OR COMPUTER ARE OUT OF CARDS IN RESPECTIVE METHODS
 		
 		//TODO: NOT JACK, SHOULD BE JACK WITH SOME STUFF
 		if(centerPile.peek().equals("Jack")) {
