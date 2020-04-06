@@ -141,8 +141,8 @@ public class blackJackController
 				{
 					String szTemp = centerPile.pop();
 					player.add(szTemp);
-					stackCount = 0;
 				}
+				stackCount = 0;
 				//Player gets the cards, beat cpu.
 			}
 			//response time vs computer?
@@ -152,8 +152,8 @@ public class blackJackController
 				{
 					String szTemp = centerPile.pop();
 					computer.add(szTemp);
-					stackCount = 0;
 				}
+				stackCount = 0;
 				//Computer wins, gets the cards in stack to his deck.
 			}
 		}
@@ -163,8 +163,8 @@ public class blackJackController
 			{
 				String szTemp = centerPile.pop();
 				computer.add(szTemp);
-				stackCount = 0;
 			}
+			stackCount = 0;
 			//NOT A JACK
 			
 			
@@ -236,8 +236,8 @@ public class blackJackController
 				{
 					String szTemp = centerPile.pop();
 					player.add(szTemp);
-					stackCount = 0;
 				}
+				stackCount = 0;
 				//Computer slaps when not a jack, player gets cards.
 			}
 			
