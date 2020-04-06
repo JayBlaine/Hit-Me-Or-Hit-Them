@@ -191,18 +191,22 @@ public class blackJackController
 		//TODO: NOT WORKING^^^
 		
 		//TODO: NOT JACK, SHOULD BE JACK WITH SOME STUFF
-		if(centerPile.peek().equals("Jack")) {
+		if(centerPile.peek().equals("Jack")) 
+		{
 			startSlap = System.currentTimeMillis();
 			isSlappable = true;
 		}
 		else
 			isSlappable = false;
 		
-		try {
+		try 
+		{
 			Thread.sleep(1000);
 			btnFlip.disarm();
 			//TODO: SLEEP NOT WORKING TO DISARM BUTTON, ONLY DELAYS CLICK
-		} catch (InterruptedException e) {
+		} 
+		catch (InterruptedException e) 
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
