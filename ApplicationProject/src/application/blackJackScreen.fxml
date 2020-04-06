@@ -48,7 +48,7 @@
     <Label fx:id="lbld3" layoutX="152.0" layoutY="4.0" prefHeight="14.0" prefWidth="70.0" />
     <Label fx:id="lbld2" layoutX="221.0" layoutY="5.0" prefHeight="14.0" prefWidth="70.0" />
     <Label fx:id="lbld1" layoutX="294.0" layoutY="4.0" prefHeight="14.0" prefWidth="70.0" />
-    <Label fx:id="txtHelp" layoutX="121.0" layoutY="132.0" prefHeight="69.0" prefWidth="350.0" text="BlackJack is a game where your hand must add up to 21. One of the dealer's cards will be shown and all of your cards wil be displayed. Press the &quot;Hit&quot; button to add another card to your hand. Press the &quot;Hold&quot; button if you are satisfied with your hand." textAlignment="CENTER" textFill="#f8f7f7" visible="false" wrapText="true" />
+    <Label fx:id="txtHelp" layoutX="121.0" layoutY="106.0" prefHeight="95.0" prefWidth="350.0" text="Slapjack is a game where the goal is to slap the jack before your opponent does! Click flip to put the top card of your deck onto the pile. If it's a jack, slap it! If you beat the computer, you get all the cards in the pile! Play until either you or the computer are out of cards." textAlignment="CENTER" textFill="#f8f7f7" visible="false" wrapText="true" />
     <Button fx:id="btnReturn" layoutX="429.0" layoutY="213.0" mnemonicParsing="false" onAction="#returnAction" text="Return to Menu" />
     <Button fx:id="btnHelp" layoutX="340.0" layoutY="213.0" mnemonicParsing="false" onAction="#helpAction" text="Help" />
     <Button fx:id="btnDiff" layoutX="359.0" layoutY="258.0" mnemonicParsing="false" onAction="#changeDifficulty" prefWidth="203.0" text="Change Difficulty" />
