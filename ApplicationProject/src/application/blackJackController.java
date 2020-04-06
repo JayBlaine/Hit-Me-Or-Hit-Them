@@ -6,7 +6,6 @@ package application;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Stack;
-import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -86,6 +85,7 @@ public class blackJackController
 	private double startSlap;
 	private double actualSlap;
 	private int stackCount = 0;
+	//TODO: FOR CENTER STACK DISPLAY
 	
 	private boolean isSlappable = false;
 	//Add round mechanic?
@@ -130,7 +130,7 @@ public class blackJackController
 	private void slapAction(ActionEvent event)
     {
 		System.out.println("hit");
-		String test = centerPile.peek();
+		//String test = centerPile.peek();
 		//May not need ^^
 		if(isSlappable)
 		{
