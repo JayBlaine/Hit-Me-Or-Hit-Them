@@ -75,9 +75,9 @@ public class blackJackController
 	private int diffInt = 1;
 	Computer cpu = new Computer(diffInt);
 	
-	//Card startingDeck = new Card();
-	ArrayList<String> player = Card.getDeck();
-	ArrayList<String> computer = Computer.getDeck();
+	ArrayList<String> startingDeck = Card.getDeck();
+	ArrayList<String> player = new ArrayList<String>();
+	ArrayList<String> computer = new ArrayList<String>();
 	
 	Stack<String> centerPile = new Stack<String>();
 	
@@ -94,9 +94,13 @@ public class blackJackController
     {
 		//Testing computer class
 		startTime = System.currentTimeMillis();
+		
 		System.out.println(startTime);
-		Card.shuffleDeck(player); //52
-		Card.shuffleDeck(computer); //52
+		//^Testing^
+		
+		Card.shuffleDeck(startingDeck);
+		player=Card.dealCards(startingDeck, 26);
+		computer=Card.dealCards(startingDeck, 26);
 		
 		//Maybe add number of cards left??
 		
