@@ -188,6 +188,8 @@ public class blackJackController
 		btnFlip.disarm();
 		//TODO: NOT WORKING^^^
 		
+		//TODO: ADD CHECKING FOR IF USER OR COMPUTER ARE OUT OF CARDS IN RESPECTIVE METHODS
+		
 		//TODO: NOT JACK, SHOULD BE JACK WITH SOME STUFF
 		if(centerPile.peek().equals("Jack")) {
 			startSlap = System.currentTimeMillis();
