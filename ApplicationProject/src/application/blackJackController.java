@@ -68,6 +68,10 @@ public class blackJackController
 	@FXML
 	private Label lblDiff;
 	@FXML
+	private Label lblPlayerDeck;
+	@FXML
+	private Label lblCpuDeck;
+	@FXML
 	private Button btnFlip;
 	@FXML
 	private Button btnSlap;
