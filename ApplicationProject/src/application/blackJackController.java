@@ -179,6 +179,7 @@ public class blackJackController
 		if(playerTurn)
 		{
 			playerTurn = false;
+			//For next turn
 			//Change color of decks
 			rect1.setFill(Color.GREEN);
 			rect3.setFill(Color.RED);
@@ -257,6 +258,7 @@ public class blackJackController
 		{
 			computerTurn();
 			playerTurn = true;
+			//For next turn
 			rect3.setFill(Color.GREEN);
 			rect1.setFill(Color.RED);
 			//Change color of decks
@@ -310,25 +312,60 @@ public class blackJackController
 		{
 			isSlappable = false;
 			
-			if(Math.random() > 0.9)
+			switch(diffInt) 
 			{
-				while(!centerPile.isEmpty())
+			case 1:
+				if(Math.random() > 0.9)
 				{
-					String szTemp = centerPile.pop();
-					player.add(szTemp);
+					while(!centerPile.isEmpty())
+					{
+						String szTemp = centerPile.pop();
+						player.add(szTemp);
+					}
+					playerDeckSize += stackCount;
+					lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));
+					
+					stackCount = 0;
+					lblStackSize.setText(Integer.toString(stackCount));
+					lblDeck.setText("Your opponent slapped the wrong card!");
+					//Computer slaps when not a jack, player gets cards.
 				}
-				playerDeckSize += stackCount;
-				lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));
-				
-				stackCount = 0;
-				lblStackSize.setText(Integer.toString(stackCount));
-				lblDeck.setText("Your opponent slapped the wrong card!");
-				//Computer slaps when not a jack, player gets cards.
+			case 2:
+				if(Math.random() > 0.95)
+				{
+					while(!centerPile.isEmpty())
+					{
+						String szTemp = centerPile.pop();
+						player.add(szTemp);
+					}
+					playerDeckSize += stackCount;
+					lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));
+					
+					stackCount = 0;
+					lblStackSize.setText(Integer.toString(stackCount));
+					lblDeck.setText("Your opponent slapped the wrong card!");
+					//Computer slaps when not a jack, player gets cards.
+				}
+			case 3:
+				if(Math.random() > 0.97)
+				{
+					while(!centerPile.isEmpty())
+					{
+						String szTemp = centerPile.pop();
+						player.add(szTemp);
+					}
+					playerDeckSize += stackCount;
+					lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));
+					
+					stackCount = 0;
+					lblStackSize.setText(Integer.toString(stackCount));
+					lblDeck.setText("Your opponent slapped the wrong card!");
+					//Computer slaps when not a jack, player gets cards.
+				}
 			}
 			
 		}
 		
-		btnFlip.arm();
 	}
 	
 	@FXML
