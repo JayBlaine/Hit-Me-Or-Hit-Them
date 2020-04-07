@@ -89,7 +89,6 @@ public class blackJackController
 		computer = Card.dealCards(startingDeck, 26);
 		
 		//Maybe add number of cards left??
-		
     }
 	
 	@FXML
@@ -118,8 +117,7 @@ public class blackJackController
 	private void slapAction(ActionEvent event)
     {
 		System.out.println("hit");
-		//String test = centerPile.peek();
-		//May not need ^^
+
 		if(isSlappable)
 		{
 			actualSlap = System.currentTimeMillis();
@@ -241,10 +239,7 @@ public class blackJackController
 		stackCount++;
 		lblStackSize.setText(Integer.toString(stackCount));
 		//Display CENTERPILE
-		btnFlip.disarm();
-		//TODO: NOT WORKING^^^
 		
-		//TODO: NOT JACK, SHOULD BE JACK WITH SOME STUFF
 		if(centerPile.peek().equals("Jack\u2660") 
 				|| centerPile.peek().equals("Jack\u2663")
 				|| centerPile.peek().equals("Jack\u2665")
@@ -257,8 +252,7 @@ public class blackJackController
 			isSlappable = false;
 
 		}
-			//btnFlip.disarm();
-			//TODO: SLEEP NOT WORKING TO DISARM BUTTON, ONLY DELAYS CLICK
+		
 		else
 		{
 			computerTurn();
@@ -271,8 +265,6 @@ public class blackJackController
 	
 	private void computerTurn() throws InterruptedException
 	{
-		//Thread.sleep(500);
-		//MAYBE ADD LBL SAYING IT's COMPUTER TURN
 		if(!centerPile.isEmpty() 
 				&& (centerPile.peek().equals("Jack\u2660") 
 				|| centerPile.peek().equals("Jack\u2663")
@@ -290,8 +282,6 @@ public class blackJackController
 			stackCount = 0;
 			lblStackSize.setText(Integer.toString(stackCount));
 			lblDeck.setText("You skipped over a jack!");
-			
-			//Thread.sleep(500);
 			
 			//Player skips over jack.
 		}
@@ -337,7 +327,6 @@ public class blackJackController
 			}
 			
 		}
-		
 		
 		btnFlip.arm();
 	}
