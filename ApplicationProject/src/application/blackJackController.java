@@ -22,6 +22,8 @@ import javafx.scene.shape.Rectangle;
 public class blackJackController 
 {
 	@FXML
+	private Label lblGameOver;
+	@FXML
 	private Label lblDeck;
 	@FXML
 	private Label txtHelp;
@@ -37,6 +39,18 @@ public class blackJackController
 	private Button btnFlip;
 	@FXML
 	private Button btnSlap;
+	@FXML
+	private Button btnDiff;
+	@FXML
+	private Button btnHelp;
+	@FXML
+	private Button btnReturn;
+	@FXML
+	private Rectangle rect1;
+	@FXML
+	private Rectangle rect2;
+	@FXML
+	private Rectangle rect3;
 	
 	private int diffInt = 1;
 	Computer cpu = new Computer(diffInt);
@@ -167,7 +181,23 @@ public class blackJackController
 		
 		if(player.isEmpty() || computer.isEmpty())
 		{
-			//TODO: GAME OVER STUFF
+			lblDiff.setVisible(false);
+			lblStackSize.setVisible(false);
+			lblPlayerDeck.setVisible(false);
+			lblCpuDeck.setVisible(false);
+			lblDeck.setVisible(false);
+			txtHelp.setVisible(false);
+			btnDiff.setVisible(false);
+			btnFlip.setVisible(false);
+			btnSlap.setVisible(false);
+			btnHelp.setVisible(false);
+			rect1.setVisible(false);
+			rect2.setVisible(false);
+			rect3.setVisible(false);
+			if(player.isEmpty())
+				lblGameOver.setText("Computer Wins!");
+			else
+				lblGameOver.setText("You Win!");
 		}
 		//Convert to label, implement computer actions/comparison between
 		//player and cpu.
@@ -218,7 +248,6 @@ public class blackJackController
 		lblStackSize.setText(Integer.toString(stackCount));
 		//Display CENTERPILE
 		
-		//TODO: NOT JACK, SHOULD BE JACK WITH SOME STUFF
 		if(centerPile.peek().equals("Jack\u2660") 
 				|| centerPile.peek().equals("Jack\u2663")
 				|| centerPile.peek().equals("Jack\u2665")
