@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 /**
@@ -72,6 +73,7 @@ public class blackJackController
 	//TODO: FOR CENTER STACK DISPLAY
 	
 	private boolean isSlappable = false;
+	private boolean playerTurn = true;
 	//Add round mechanic?
 	@FXML
     private void initialize()
@@ -176,6 +178,13 @@ public class blackJackController
 	private void flipAction(ActionEvent event) throws InterruptedException
     {
 		System.out.println("hold hit");
+		if(playerTurn)
+		{
+			playerTurn = false;
+			//Change color of decks
+			rect1.setFill(Color.GREEN);
+			rect3.setFill(Color.RED);
+
 		
 		if(player.isEmpty() || computer.isEmpty())
 		{
@@ -216,7 +225,7 @@ public class blackJackController
 			lblStackSize.setText(Integer.toString(stackCount));
 			lblDeck.setText("You skipped over a jack!");
 			
-			Thread.sleep(500);
+			//Thread.sleep(500);
 			
 			//Player skips over jack.
 		}
@@ -247,16 +256,46 @@ public class blackJackController
 		else
 			isSlappable = false;
 
-		
-			btnFlip.disarm();
+		}
+			//btnFlip.disarm();
 			//TODO: SLEEP NOT WORKING TO DISARM BUTTON, ONLY DELAYS CLICK
-		computerTurn();
+		else
+		{
+			computerTurn();
+			playerTurn = true;
+			rect3.setFill(Color.GREEN);
+			rect1.setFill(Color.RED);
+			//Change color of decks
+		}
     }
 	
 	private void computerTurn() throws InterruptedException
 	{
-		Thread.sleep(500);
+		//Thread.sleep(500);
 		//MAYBE ADD LBL SAYING IT's COMPUTER TURN
+		if(!centerPile.isEmpty() 
+				&& (centerPile.peek().equals("Jack\u2660") 
+				|| centerPile.peek().equals("Jack\u2663")
+				|| centerPile.peek().equals("Jack\u2665")
+				|| centerPile.peek().equals("Jack\u2666"))) 
+		{
+			while(!centerPile.isEmpty())
+			{
+				String szTemp = centerPile.pop();
+				computer.add(szTemp);
+			}
+			lblCpuDeck.setText(Integer.toString(cpuDeckSize + stackCount));
+			cpuDeckSize += stackCount;
+			
+			stackCount = 0;
+			lblStackSize.setText(Integer.toString(stackCount));
+			lblDeck.setText("You skipped over a jack!");
+			
+			//Thread.sleep(500);
+			
+			//Player skips over jack.
+		}
+		
 		centerPile.push(computer.get(0));
 		computer.remove(0);
 		
