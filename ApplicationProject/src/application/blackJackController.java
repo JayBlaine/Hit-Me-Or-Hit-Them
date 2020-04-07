@@ -6,6 +6,7 @@ package application;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Stack;
+import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -131,9 +132,9 @@ public class blackJackController
 				lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));
 				playerDeckSize += stackCount;
 				
-				lblDeck.setText("You slapped the jack!");
 				stackCount = 0;
 				lblStackSize.setText(Integer.toString(stackCount));
+				lblDeck.setText("You slapped the jack!");
 				//Player gets the cards, beat cpu.
 			}
 			//response time vs computer?
@@ -147,9 +148,9 @@ public class blackJackController
 				lblCpuDeck.setText(Integer.toString(cpuDeckSize + stackCount));
 				cpuDeckSize += stackCount;
 				
-				lblDeck.setText("Your opponenet beat you!");
 				stackCount = 0;
 				lblStackSize.setText(Integer.toString(stackCount));
+				lblDeck.setText("Your opponenet beat you!");
 				//Computer wins, gets the cards in stack to his deck.
 			}
 		}
@@ -163,14 +164,11 @@ public class blackJackController
 			lblCpuDeck.setText(Integer.toString(cpuDeckSize + stackCount));
 			cpuDeckSize += stackCount;
 			
-			lblDeck.setText("That wasn't a jack!");
 			stackCount = 0;
 			lblStackSize.setText(Integer.toString(stackCount));
+			lblDeck.setText("That wasn't a jack!");
 			//NOT A JACK
-			
-			
 		}
-		//Convert to label
 		
     }
 	
@@ -199,8 +197,33 @@ public class blackJackController
 			else
 				lblGameOver.setText("You Win!");
 		}
-		//Convert to label, implement computer actions/comparison between
-		//player and cpu.
+		
+		if(!centerPile.isEmpty() 
+				&& (centerPile.peek().equals("Jack\u2660") 
+				|| centerPile.peek().equals("Jack\u2663")
+				|| centerPile.peek().equals("Jack\u2665")
+				|| centerPile.peek().equals("Jack\u2666"))) 
+		{
+			while(!centerPile.isEmpty())
+			{
+				String szTemp = centerPile.pop();
+				computer.add(szTemp);
+			}
+			lblCpuDeck.setText(Integer.toString(cpuDeckSize + stackCount));
+			cpuDeckSize += stackCount;
+			
+			stackCount = 0;
+			lblStackSize.setText(Integer.toString(stackCount));
+			lblDeck.setText("You skipped over a jack!");
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//Player skips over jack.
+		}
+		
 		centerPile.push(player.get(0));
 		player.remove(0);
 		
@@ -247,7 +270,7 @@ public class blackJackController
 		stackCount++;
 		lblStackSize.setText(Integer.toString(stackCount));
 		//Display CENTERPILE
-		
+
 		if(centerPile.peek().equals("Jack\u2660") 
 				|| centerPile.peek().equals("Jack\u2663")
 				|| centerPile.peek().equals("Jack\u2665")
@@ -270,9 +293,9 @@ public class blackJackController
 				playerDeckSize += stackCount;
 				lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));
 				
-				lblDeck.setText("Your opponent slapped the wrong card!");
 				stackCount = 0;
 				lblStackSize.setText(Integer.toString(stackCount));
+				lblDeck.setText("Your opponent slapped the wrong card!");
 				//Computer slaps when not a jack, player gets cards.
 			}
 			
