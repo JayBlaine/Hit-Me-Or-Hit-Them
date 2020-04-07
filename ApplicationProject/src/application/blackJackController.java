@@ -173,7 +173,7 @@ public class blackJackController
     }
 	
 	@FXML
-	private void flipAction(ActionEvent event)
+	private void flipAction(ActionEvent event) throws InterruptedException
     {
 		System.out.println("hold hit");
 		
@@ -215,12 +215,9 @@ public class blackJackController
 			stackCount = 0;
 			lblStackSize.setText(Integer.toString(stackCount));
 			lblDeck.setText("You skipped over a jack!");
-			try {
-				TimeUnit.SECONDS.sleep(1);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
+			Thread.sleep(500);
+			
 			//Player skips over jack.
 		}
 		
@@ -256,8 +253,9 @@ public class blackJackController
 		computerTurn();
     }
 	
-	private void computerTurn()
+	private void computerTurn() throws InterruptedException
 	{
+		Thread.sleep(500);
 		//MAYBE ADD LBL SAYING IT's COMPUTER TURN
 		centerPile.push(computer.get(0));
 		computer.remove(0);
