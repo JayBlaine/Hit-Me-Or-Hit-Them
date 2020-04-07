@@ -6,7 +6,6 @@ package application;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Stack;
-import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
