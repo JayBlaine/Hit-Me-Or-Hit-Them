@@ -45,6 +45,6 @@
     </Label>
     <Label fx:id="lblPlayerDeck" font="$x4" layoutX="491.0" layoutY="269.0" text="26" />
     <Label id="lblStack" fx:id="lblStackSize" font="$x4" layoutX="362.0" layoutY="129.0" prefWidth="39.0" text="0" textFill="WHITE" />
-    <Label fx:id="lblMsg" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="171.0" layoutY="0.0" prefHeight="67.0" prefWidth="258.0" text="" textAlignment="CENTER" textFill="WHITE" />
+    <Label fx:id="lblMsg" alignment="TOP_CENTER" contentDisplay="CENTER" font="$x1" layoutX="171.0" layoutY="0.0" prefHeight="71.0" prefWidth="258.0" text="" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
   </children>
 </AnchorPane>
