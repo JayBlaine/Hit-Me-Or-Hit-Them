@@ -13,16 +13,9 @@
   <children>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="131.0" layoutX="247.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
     <Label fx:id="lblDeck" layoutX="261.0" layoutY="108.0" prefHeight="58.0" prefWidth="81.0" textAlignment="CENTER" wrapText="true" />
-    <Rectangle fx:id="p1" arcHeight="5.0" arcWidth="5.0" disable="true" height="27.0" layoutX="69.0" layoutY="330.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0">
-      <fill>
-        <Color blue="0.973" green="0.965" red="0.957" fx:id="x1" />
-      </fill>
-    </Rectangle>
-    <Rectangle fx:id="p3" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f7f9fc" height="27.0" layoutX="224.0" layoutY="330.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
-    <Rectangle fx:id="p2" arcHeight="5.0" arcWidth="5.0" disable="true" fill="WHITE" height="27.0" layoutX="147.0" layoutY="330.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
-    <Rectangle fx:id="p4" arcHeight="5.0" arcWidth="5.0" disable="true" fill="WHITE" height="27.0" layoutX="301.0" layoutY="330.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
-    <Rectangle fx:id="p5" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f8fafc" height="27.0" layoutX="378.0" layoutY="330.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
-    <Label layoutX="5.0" layoutY="330.0" prefHeight="27.0" prefWidth="62.0" text="Your Hand: ">
+    <Button fx:id="btnFlip" layoutX="223.0" layoutY="212.0" mnemonicParsing="false" onAction="#flipAction" prefWidth="70.0" text="Flip" />
+    <Button fx:id="btnSlap" layoutX="303.0" layoutY="212.0" mnemonicParsing="false" onAction="#slapAction" prefWidth="70.0" text="Slap" />
+    <Label fx:id="lblDiff" layoutX="495.0" layoutY="1.0" prefHeight="27.0" prefWidth="70.0" text="Easy" textAlignment="CENTER">
       <font>
         <Font name="System Bold" size="10.0" fx:id="x2" />
       </font>
@@ -30,24 +23,6 @@
         <Color blue="0.969" green="0.969" red="0.988" fx:id="x3" />
       </textFill>
     </Label>
-    <Label fx:id="lblp1" layoutX="77.0" layoutY="336.0" prefHeight="14.0" prefWidth="62.0" textAlignment="CENTER" wrapText="true" />
-    <Label fx:id="lblp2" layoutX="147.0" layoutY="329.0" prefHeight="14.0" prefWidth="77.0" />
-    <Label fx:id="lblp3" layoutX="224.0" layoutY="329.0" prefHeight="14.0" prefWidth="77.0" />
-    <Label fx:id="lblp4" layoutX="301.0" layoutY="329.0" prefHeight="14.0" prefWidth="77.0" />
-    <Label fx:id="lblp5" layoutX="378.0" layoutY="329.0" prefHeight="14.0" prefWidth="77.0" />
-    <Button fx:id="btnFlip" layoutX="223.0" layoutY="212.0" mnemonicParsing="false" onAction="#flipAction" prefWidth="70.0" text="Flip" />
-    <Button fx:id="btnSlap" layoutX="303.0" layoutY="212.0" mnemonicParsing="false" onAction="#slapAction" prefWidth="70.0" text="Slap" />
-    <Rectangle fx:id="d5" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="27.0" layoutX="1.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
-    <Rectangle fx:id="d4" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="27.0" layoutX="78.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
-    <Rectangle fx:id="d3" arcHeight="5.0" arcWidth="5.0" disable="true" fill="$x1" height="27.0" layoutX="150.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
-    <Rectangle fx:id="d2" arcHeight="5.0" arcWidth="5.0" disable="true" fill="$x1" height="27.0" layoutX="224.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
-    <Rectangle fx:id="d1" arcHeight="5.0" arcWidth="5.0" disable="true" fill="$x1" height="27.0" layoutX="290.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="77.0" />
-    <Label fx:id="lblDiff" font="$x2" layoutX="495.0" layoutY="1.0" prefHeight="27.0" prefWidth="70.0" text="Easy" textAlignment="CENTER" textFill="$x3" />
-    <Label fx:id="lbld5" layoutX="1.0" layoutY="8.0" prefHeight="14.0" prefWidth="70.0" />
-    <Label fx:id="lbld4" layoutX="80.0" layoutY="3.0" prefHeight="14.0" prefWidth="70.0" />
-    <Label fx:id="lbld3" layoutX="152.0" layoutY="4.0" prefHeight="14.0" prefWidth="70.0" />
-    <Label fx:id="lbld2" layoutX="221.0" layoutY="5.0" prefHeight="14.0" prefWidth="70.0" />
-    <Label fx:id="lbld1" layoutX="294.0" layoutY="4.0" prefHeight="14.0" prefWidth="70.0" />
     <Label fx:id="txtHelp" layoutX="15.0" layoutY="131.0" prefHeight="188.0" prefWidth="195.0" text="Slapjack is a game where the goal is to slap the jack before your opponent does! Click flip to put the top card of your deck onto the pile. If it's a jack, slap it! If you beat the computer, you get all the cards in the pile! Play until either you or the computer are out of cards." textAlignment="CENTER" textFill="#f8f7f7" visible="false" wrapText="true" />
     <Button fx:id="btnReturn" layoutX="457.0" layoutY="92.0" mnemonicParsing="false" onAction="#returnAction" text="Return to Menu" />
     <Button fx:id="btnHelp" layoutX="278.0" layoutY="254.0" mnemonicParsing="false" onAction="#helpAction" text="Help" />
