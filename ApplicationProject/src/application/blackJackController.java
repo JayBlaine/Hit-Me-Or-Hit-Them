@@ -117,7 +117,7 @@ public class blackJackController
 				lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));
 				playerDeckSize += stackCount;
 				
-				lblDeck.setText("");
+				lblDeck.setText("You slapped the jack!");
 				stackCount = 0;
 				lblStackSize.setText(Integer.toString(stackCount));
 				//Player gets the cards, beat cpu.
@@ -133,7 +133,7 @@ public class blackJackController
 				lblCpuDeck.setText(Integer.toString(cpuDeckSize + stackCount));
 				cpuDeckSize += stackCount;
 				
-				lblDeck.setText("");
+				lblDeck.setText("Your opponenet beat you!");
 				stackCount = 0;
 				lblStackSize.setText(Integer.toString(stackCount));
 				//Computer wins, gets the cards in stack to his deck.
@@ -149,7 +149,7 @@ public class blackJackController
 			lblCpuDeck.setText(Integer.toString(cpuDeckSize + stackCount));
 			cpuDeckSize += stackCount;
 			
-			lblDeck.setText("");
+			lblDeck.setText("That wasn't a jack!");
 			stackCount = 0;
 			lblStackSize.setText(Integer.toString(stackCount));
 			//NOT A JACK
@@ -186,7 +186,10 @@ public class blackJackController
 		//TODO: NOT WORKING^^^
 		
 		//TODO: NOT JACK, SHOULD BE JACK WITH SOME STUFF
-		if(centerPile.peek().equals("Jack")) 
+		if(centerPile.peek().equals("Jack\u2660") 
+				|| centerPile.peek().equals("Jack\u2663")
+				|| centerPile.peek().equals("Jack\u2665")
+				|| centerPile.peek().equals("Jack\u2666")) 
 		{
 			startSlap = System.currentTimeMillis();
 			isSlappable = true;
@@ -216,7 +219,10 @@ public class blackJackController
 		//Display CENTERPILE
 		
 		//TODO: NOT JACK, SHOULD BE JACK WITH SOME STUFF
-		if(centerPile.peek().equals("Jack"))
+		if(centerPile.peek().equals("Jack\u2660") 
+				|| centerPile.peek().equals("Jack\u2663")
+				|| centerPile.peek().equals("Jack\u2665")
+				|| centerPile.peek().equals("Jack\u2666"))
 		{
 			startSlap = System.currentTimeMillis();
 			isSlappable = true;
@@ -225,7 +231,7 @@ public class blackJackController
 		{
 			isSlappable = false;
 			
-			if(Math.random() > 0.95)
+			if(Math.random() > 0.9)
 			{
 				while(!centerPile.isEmpty())
 				{
@@ -235,7 +241,7 @@ public class blackJackController
 				playerDeckSize += stackCount;
 				lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));
 				
-				lblDeck.setText("");
+				lblDeck.setText("Your opponent slapped the wrong card!");
 				stackCount = 0;
 				lblStackSize.setText(Integer.toString(stackCount));
 				//Computer slaps when not a jack, player gets cards.
