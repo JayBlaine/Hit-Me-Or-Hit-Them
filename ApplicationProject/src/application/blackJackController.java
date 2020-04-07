@@ -329,8 +329,8 @@ public class blackJackController
 					lblStackSize.setText(Integer.toString(stackCount));
 					lblDeck.setText("Your opponent slapped the wrong card!");
 					//Computer slaps when not a jack, player gets cards.
-					break;
 				}
+				break;
 			case 2:
 				if(Math.random() > 0.95)
 				{
@@ -346,8 +346,8 @@ public class blackJackController
 					lblStackSize.setText(Integer.toString(stackCount));
 					lblDeck.setText("Your opponent slapped the wrong card!");
 					//Computer slaps when not a jack, player gets cards.
-					break;
 				}
+				break;
 			case 3:
 				if(Math.random() > 0.97)
 				{
@@ -363,8 +363,8 @@ public class blackJackController
 					lblStackSize.setText(Integer.toString(stackCount));
 					lblDeck.setText("Your opponent slapped the wrong card!");
 					//Computer slaps when not a jack, player gets cards.
-					break;
 				}
+				break;
 			}
 			
 		}
