@@ -72,6 +72,8 @@ public class blackJackController
 	@FXML
 	private Label lblCpuDeck;
 	@FXML
+	private Label lblStackSize;
+	@FXML
 	private Button btnFlip;
 	@FXML
 	private Button btnSlap;
@@ -88,7 +90,10 @@ public class blackJackController
 	private double startTime;
 	private double startSlap;
 	private double actualSlap;
+	
 	private int stackCount = 0;
+	private int playerDeckSize = 26;
+	private int cpuDeckSize = 26;
 	//TODO: FOR CENTER STACK DISPLAY
 	
 	private boolean isSlappable = false;
@@ -149,7 +154,12 @@ public class blackJackController
 					String szTemp = centerPile.pop();
 					player.add(szTemp);
 				}
+				lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));
+				playerDeckSize += stackCount;
+				
+				lblDeck.setText("");
 				stackCount = 0;
+				lblStackSize.setText(Integer.toString(stackCount));
 				//Player gets the cards, beat cpu.
 			}
 			//response time vs computer?
@@ -160,7 +170,12 @@ public class blackJackController
 					String szTemp = centerPile.pop();
 					computer.add(szTemp);
 				}
+				lblCpuDeck.setText(Integer.toString(cpuDeckSize + stackCount));
+				cpuDeckSize += stackCount;
+				
+				lblDeck.setText("");
 				stackCount = 0;
+				lblStackSize.setText(Integer.toString(stackCount));
 				//Computer wins, gets the cards in stack to his deck.
 			}
 		}
@@ -171,7 +186,12 @@ public class blackJackController
 				String szTemp = centerPile.pop();
 				computer.add(szTemp);
 			}
+			lblCpuDeck.setText(Integer.toString(cpuDeckSize + stackCount));
+			cpuDeckSize += stackCount;
+			
+			lblDeck.setText("");
 			stackCount = 0;
+			lblStackSize.setText(Integer.toString(stackCount));
 			//NOT A JACK
 			
 			
@@ -193,7 +213,14 @@ public class blackJackController
 		//player and cpu.
 		centerPile.push(player.get(0));
 		player.remove(0);
+		
+		lblDeck.setText(centerPile.peek());
+		
+		playerDeckSize--;
+		lblPlayerDeck.setText(Integer.toString(playerDeckSize));
+		
 		stackCount++;
+		lblStackSize.setText(Integer.toString(stackCount));
 		//Display CENTERPILE
 		btnFlip.disarm();
 		//TODO: NOT WORKING^^^
@@ -206,19 +233,10 @@ public class blackJackController
 		}
 		else
 			isSlappable = false;
+
 		
-		try 
-		{
-			Thread.sleep(1000);
 			btnFlip.disarm();
 			//TODO: SLEEP NOT WORKING TO DISARM BUTTON, ONLY DELAYS CLICK
-		} 
-		catch (InterruptedException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		computerTurn();
     }
 	
@@ -227,7 +245,14 @@ public class blackJackController
 		//MAYBE ADD LBL SAYING IT's COMPUTER TURN
 		centerPile.push(computer.get(0));
 		computer.remove(0);
+		
+		lblDeck.setText(centerPile.peek());
+		
+		cpuDeckSize--;
+		lblCpuDeck.setText(Integer.toString(cpuDeckSize));
+		
 		stackCount++;
+		lblStackSize.setText(Integer.toString(stackCount));
 		//Display CENTERPILE
 		
 		//TODO: NOT JACK, SHOULD BE JACK WITH SOME STUFF
@@ -247,7 +272,12 @@ public class blackJackController
 					String szTemp = centerPile.pop();
 					player.add(szTemp);
 				}
+				playerDeckSize += stackCount;
+				lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));
+				
+				lblDeck.setText("");
 				stackCount = 0;
+				lblStackSize.setText(Integer.toString(stackCount));
 				//Computer slaps when not a jack, player gets cards.
 			}
 			
