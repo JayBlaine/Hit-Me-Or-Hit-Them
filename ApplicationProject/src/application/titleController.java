@@ -20,17 +20,17 @@ public class titleController
 	@FXML
 	private void handle(ActionEvent event)
     {
-		Main.url=Main.class.getResource("blackJackScreen.fxml");
+		Main.url=Main.class.getResource("SlapJackScreen.fxml");
 		Main.loader.setLocation(Main.url);	
         try {
-			Main.scene.setRoot(FXMLLoader.load(getClass().getResource("blackJackScreen.fxml")));
+			Main.scene.setRoot(FXMLLoader.load(getClass().getResource("SlapJackScreen.fxml")));
 			Main.root=(AnchorPane)Main.loader.load();
 		      
 			Main.stage.setScene(Main.scene);
-			Main.stage.setTitle("Black Jack"); //Changing the title of the primaryStage to better fit the purpose of the application
+			Main.stage.setTitle("Slap Jack"); //Changing the title of the primaryStage to better fit the purpose of the application
 			Main.stage.show();
 		
-			System.out.println("blackjack");
+			System.out.println("Slap Jack");
 		}
         catch (IOException e) 
         {
