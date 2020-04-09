@@ -33,8 +33,6 @@ public class SlapJackController
 	@FXML
 	private Label lblStackSize;
 	@FXML
-	private Label lblMsg;
-	@FXML
 	private Button btnFlip;
 	@FXML
 	private Button btnSlap;
@@ -71,7 +69,9 @@ public class SlapJackController
 	private ArrayList<String> computer = new ArrayList<String>();		//instantiating
 	private Stack<String> centerPile = new Stack<String>();				//instantiating
 	
-	
+	/**
+	 * this method initializes and is run from the beginning 
+	 */
 	@FXML
     private void initialize()											//this runs at the beginning "initializing" everything 
     {
@@ -82,6 +82,11 @@ public class SlapJackController
 		
     }
 	
+	
+	/**
+	 * this method changes the difficulty of the game
+	 * @param event
+	 */
 	@FXML
 	private void changeDifficulty(ActionEvent event)					//method handles the change of difficulty button
 	{
@@ -102,6 +107,11 @@ public class SlapJackController
 		}
 		cpu.setDifficulty(diffInt);
 	}
+	/**
+	 * this method takes care of the slap button 
+	 * it takes into account what the player slaps
+	 * @param event
+	 */
 	@FXML
 	private void slapAction(ActionEvent event)							//this method takes cares of the slapping action
     {
@@ -123,8 +133,7 @@ public class SlapJackController
 				
 				stackCount = 0;											//initializing - resetting the stack count to be zero				
 				lblStackSize.setText(Integer.toString(stackCount));		//setting label to the current stack size
-				lblMsg.setText("You slapped the jack!");				//setting label text
-				lblDeck.setText("");
+				lblDeck.setText("You slapped the jack!");				//setting label text
 																			
 			}
 			else														//Computer wins, gets the cards in stack to his deck.
@@ -139,8 +148,7 @@ public class SlapJackController
 				
 				stackCount = 0;											//initializing - resetting the stack count to be zero
 				lblStackSize.setText(Integer.toString(stackCount));		//setting label to current stack size
-				lblMsg.setText("Your opponenet beat you!");			//setting label text
-				lblDeck.setText("");
+				lblDeck.setText("Your opponenet beat you!");			//setting label text
 			}
 		}
 		else 
@@ -155,12 +163,15 @@ public class SlapJackController
 			
 			stackCount = 0;											//initializing - resetting the stack count to be zero
 			lblStackSize.setText(Integer.toString(stackCount));		//setting label to current stack size
-			lblMsg.setText("That wasn't a jack!");					//setting label text
-			lblDeck.setText("");
+			lblDeck.setText("That wasn't a jack!");					//setting label text
 		}
 		
     }
-	
+	/**
+	 * this method takes care of the flip action, it handles the flip button and flips the cards and displays it on the GUI
+	 * @param event
+	 * @throws InterruptedException
+	 */
 	@FXML
 	private void flipAction(ActionEvent event) throws InterruptedException	//this method takes care of the flip action
     {
@@ -210,8 +221,7 @@ public class SlapJackController
 				
 				stackCount = 0;											//initializing - resetting the stack back to zero 
 				lblStackSize.setText(Integer.toString(stackCount));		//setting the stack label to the current stack size
-				lblMsg.setText("You skipped over a jack!");			//setting the label text 
-				lblDeck.setText("");
+				lblDeck.setText("You skipped over a jack!");			//setting the label text 
 				
 				
 																		//Player skips over jack.
@@ -220,7 +230,6 @@ public class SlapJackController
 			centerPile.push(player.get(0));								//get card from player deck and display it in the center pile 
 			player.remove(0);											//remove card from player deck
 			
-			lblMsg.setText("");
 			lblDeck.setText(centerPile.peek());							//set the deck label to be the card from center pile (display what card )
 			
 			playerDeckSize--;											//decrement the player deck size by one
@@ -253,6 +262,10 @@ public class SlapJackController
 			}
 	    }
 		
+		/**
+		 * this method handles the computers turn and throws in the randomeness of the computer slapping a non jack 
+		 * @throws InterruptedException
+		 */
 		private void computerTurn() throws InterruptedException			//method that handles the computers turn 
 		{
 		if(!centerPile.isEmpty() 									//if the centerpile is not empty and the card on top is a Jack then do ---- 
@@ -271,15 +284,14 @@ public class SlapJackController
 			
 			stackCount = 0;											//insitializing 
 			lblStackSize.setText(Integer.toString(stackCount));		//set text of the stack size to be current stack count
-			lblMsg.setText("You skipped over a jack!");			    //set text
-			lblDeck.setText("");
+			lblDeck.setText("You skipped over a jack!");			//set text
+			
 																	//Player skips over jack.
 		}
 		
 		centerPile.push(computer.get(0));							//putting the card from computer deck to center pile deck 
 		computer.remove(0);											//removing card from computer deck (string)
 		
-		lblMsg.setText("");
 		lblDeck.setText(centerPile.peek());							//set the deck label to its current card
 		
 		cpuDeckSize--;												//removing one from deck size
@@ -316,8 +328,7 @@ public class SlapJackController
 					
 					stackCount = 0;									//reset stack count back to zero
 					lblStackSize.setText(Integer.toString(stackCount));//set the stack size to stack count
-					lblMsg.setText("Your opponent slapped the wrong card!");
-					lblDeck.setText("");
+					lblDeck.setText("Your opponent slapped the wrong card!");
 																	//Computer slaps when not a jack, player gets cards.
 				}
 				break;
@@ -334,8 +345,7 @@ public class SlapJackController
 					
 					stackCount = 0;									//reset the stack count to be zero
 					lblStackSize.setText(Integer.toString(stackCount));//set text label to the stack count
-					lblMsg.setText("Your opponent slapped the wrong card!");
-					lblDeck.setText("");
+					lblDeck.setText("Your opponent slapped the wrong card!");
 																	//Computer slaps when not a jack, player gets cards.
 				}
 				break;
@@ -352,8 +362,7 @@ public class SlapJackController
 					
 					stackCount = 0;									//reset the stack count to be zero 
 					lblStackSize.setText(Integer.toString(stackCount));////set text label to the stack count 
-					lblMsg.setText("Your opponent slapped the wrong card!");
-					lblDeck.setText("");
+					lblDeck.setText("Your opponent slapped the wrong card!");
 																	//Computer slaps when not a jack, player gets cards.
 				}
 				break;
@@ -363,6 +372,10 @@ public class SlapJackController
 		
 	}
 	
+	/**
+	 * this method takes the user back to the title page
+	 * @param event
+	 */
 	@FXML
 	private void returnAction(ActionEvent event)					//method that takes the user back to the title page after return button is clicked
     {
@@ -381,7 +394,10 @@ public class SlapJackController
 			e.printStackTrace();
 		}															//Connecting to the FXML
     }
-	
+	/**
+	 * this method takes care of the help button and sets it to visible or invisible 
+	 * @param event
+	 */
 	@FXML
 	private void helpAction(ActionEvent event)						//method that sets the help button to visible or invisible
 	{
