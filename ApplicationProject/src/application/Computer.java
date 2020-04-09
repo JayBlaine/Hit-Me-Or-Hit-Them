@@ -1,6 +1,10 @@
 package application;
 
 
+/**
+ * @author Hit Me or Hit Them Group
+ *
+ */
 public class Computer {
 	
 	private double responseTime;
@@ -11,6 +15,11 @@ public class Computer {
 		diff = iDiff;
 		
 	}
+	
+	/**
+	 * This method sets the difficulty of the SlapJack game
+	 * @param newDiff
+	 */
 	public void setDifficulty(int newDiff) {
 		switch (newDiff) {
 			case 1:
@@ -22,10 +31,23 @@ public class Computer {
 			}
 																		//No need for default, only 1,2,3 are possible
 	}
+	
+	/**
+	 * this method gets the difficulty and returns it
+	 * @return returns a double - difficulty
+	 */
 	public double getDifficulty() { 	return diff;}					//accessors
 	
+	/**
+	 * this method returns the response time of the computer
+	 * @return returns a double - response time
+	 */
 	public double getResponseTime() {	return responseTime;}			//accessors
 	
+	/**
+	 * this method sets the response time of the computer
+	 * @param newTime
+	 */
 	public void setResponseTime(double newTime) {	responseTime = newTime;}//mutators
 	
 	
