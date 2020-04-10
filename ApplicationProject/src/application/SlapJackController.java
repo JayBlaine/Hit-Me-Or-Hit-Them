@@ -23,6 +23,8 @@ public class SlapJackController
 	@FXML
 	private Label lblDeck;
 	@FXML
+	private Label lblDeck2;
+	@FXML
 	private Label txtHelp;
 	@FXML
 	private Label lblDiff;
@@ -125,6 +127,7 @@ public class SlapJackController
 				lblStackSize.setText(Integer.toString(stackCount));		//setting label to the current stack size
 				lblMsg.setText("You slapped the jack!");				//setting label text
 				lblDeck.setText("");
+				lblDeck2.setText("");
 																			
 			}
 			else														//Computer wins, gets the cards in stack to his deck.
@@ -141,6 +144,7 @@ public class SlapJackController
 				lblStackSize.setText(Integer.toString(stackCount));		//setting label to current stack size
 				lblMsg.setText("Your opponenet beat you!");			//setting label text
 				lblDeck.setText("");
+				lblDeck2.setText("");
 			}
 		}
 		else 
@@ -157,6 +161,7 @@ public class SlapJackController
 			lblStackSize.setText(Integer.toString(stackCount));		//setting label to current stack size
 			lblMsg.setText("That wasn't a jack!");					//setting label text
 			lblDeck.setText("");
+			lblDeck2.setText("");
 		}
 		
     }
@@ -180,6 +185,7 @@ public class SlapJackController
 				lblPlayerDeck.setVisible(false);						//set visibility
 				lblCpuDeck.setVisible(false);							//set visibility
 				lblDeck.setVisible(false);								//set visibility
+				lblDeck2.setVisible(false);
 				txtHelp.setVisible(false);								//set visibility
 				btnDiff.setVisible(false);								//set visibility
 				btnFlip.setVisible(false);								//set visibility
@@ -212,7 +218,7 @@ public class SlapJackController
 				lblStackSize.setText(Integer.toString(stackCount));		//setting the stack label to the current stack size
 				lblMsg.setText("You skipped over a jack!");			//setting the label text 
 				lblDeck.setText("");
-				
+				lblDeck2.setText("");
 				
 																		//Player skips over jack.
 			}
@@ -222,6 +228,7 @@ public class SlapJackController
 			
 			lblMsg.setText("");
 			lblDeck.setText(centerPile.peek());							//set the deck label to be the card from center pile (display what card )
+			lblDeck2.setText(centerPile.peek());
 			
 			playerDeckSize--;											//decrement the player deck size by one
 			lblPlayerDeck.setText(Integer.toString(playerDeckSize));	//set the player deck label to the deck size
@@ -273,6 +280,7 @@ public class SlapJackController
 			lblStackSize.setText(Integer.toString(stackCount));		//set text of the stack size to be current stack count
 			lblMsg.setText("You skipped over a jack!");			    //set text
 			lblDeck.setText("");
+			lblDeck2.setText("");
 																	//Player skips over jack.
 		}
 		
@@ -281,6 +289,7 @@ public class SlapJackController
 		
 		lblMsg.setText("");
 		lblDeck.setText(centerPile.peek());							//set the deck label to its current card
+		lblDeck2.setText(centerPile.peek());
 		
 		cpuDeckSize--;												//removing one from deck size
 		lblCpuDeck.setText(Integer.toString(cpuDeckSize));			//setting the cpu deck size label to its current size
@@ -318,6 +327,7 @@ public class SlapJackController
 					lblStackSize.setText(Integer.toString(stackCount));//set the stack size to stack count
 					lblMsg.setText("Your opponent slapped the wrong card!");
 					lblDeck.setText("");
+					lblDeck2.setText("");
 																	//Computer slaps when not a jack, player gets cards.
 				}
 				break;
@@ -336,6 +346,7 @@ public class SlapJackController
 					lblStackSize.setText(Integer.toString(stackCount));//set text label to the stack count
 					lblMsg.setText("Your opponent slapped the wrong card!");
 					lblDeck.setText("");
+					lblDeck2.setText("");
 																	//Computer slaps when not a jack, player gets cards.
 				}
 				break;
@@ -354,6 +365,7 @@ public class SlapJackController
 					lblStackSize.setText(Integer.toString(stackCount));////set text label to the stack count 
 					lblMsg.setText("Your opponent slapped the wrong card!");
 					lblDeck.setText("");
+					lblDeck2.setText("");
 																	//Computer slaps when not a jack, player gets cards.
 				}
 				break;

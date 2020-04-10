@@ -17,7 +17,7 @@
       </font>
     </Label>
     <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="131.0" layoutX="247.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
-    <Label fx:id="lblDeck" alignment="CENTER" contentDisplay="CENTER" labelFor="$rect2" layoutX="247.0" layoutY="108.0" prefHeight="58.0" prefWidth="110.0" textAlignment="CENTER" wrapText="true">
+    <Label fx:id="lblDeck" alignment="BASELINE_LEFT" contentDisplay="LEFT" labelFor="$rect2" layoutX="253.0" layoutY="62.0" prefHeight="58.0" prefWidth="110.0" textAlignment="LEFT" wrapText="true">
       <font>
         <Font name="System Bold" size="18.0" fx:id="x1" />
       </font>
@@ -46,5 +46,10 @@
     <Label fx:id="lblPlayerDeck" font="$x4" layoutX="491.0" layoutY="269.0" text="26" />
     <Label id="lblStack" fx:id="lblStackSize" font="$x4" layoutX="362.0" layoutY="129.0" prefWidth="39.0" text="0" textFill="WHITE" />
     <Label fx:id="lblMsg" alignment="TOP_CENTER" contentDisplay="CENTER" font="$x1" layoutX="171.0" layoutY="0.0" prefHeight="71.0" prefWidth="258.0" text="" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+    <Label id="lblDeck" fx:id="lblDeck2" alignment="BASELINE_RIGHT" contentDisplay="RIGHT" font="$x1" layoutX="240.0" layoutY="148.0" prefHeight="58.0" prefWidth="110.0" textAlignment="RIGHT" wrapText="true">
+      <labelFor>
+        <Rectangle id="rect2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="131.0" layoutX="247.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+      </labelFor>
+    </Label>
   </children>
 </AnchorPane>
