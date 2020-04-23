@@ -84,6 +84,9 @@ public class SlapJackController
 		
     }
 	
+	/**
+	 * @param event
+	 */
 	@FXML
 	private void changeDifficulty(ActionEvent event)					//method handles the change of difficulty button
 	{
@@ -104,6 +107,9 @@ public class SlapJackController
 		}
 		cpu.setDifficulty(diffInt);
 	}
+	/**
+	 * @param event
+	 */
 	@FXML
 	private void slapAction(ActionEvent event)							//this method takes cares of the slapping action
     {
@@ -166,6 +172,10 @@ public class SlapJackController
 		
     }
 	
+	/**
+	 * @param event
+	 * @throws InterruptedException
+	 */
 	@FXML
 	private void flipAction(ActionEvent event) throws InterruptedException	//this method takes care of the flip action
     {
@@ -260,6 +270,9 @@ public class SlapJackController
 			}
 	    }
 		
+		/**
+		 * @throws InterruptedException
+		 */
 		private void computerTurn() throws InterruptedException			//method that handles the computers turn 
 		{
 		if(!centerPile.isEmpty() 									//if the centerpile is not empty and the card on top is a Jack then do ---- 
@@ -375,6 +388,9 @@ public class SlapJackController
 		
 	}
 	
+	/**
+	 * @param event
+	 */
 	@FXML
 	private void returnAction(ActionEvent event)					//method that takes the user back to the title page after return button is clicked
     {
@@ -394,6 +410,9 @@ public class SlapJackController
 		}															//Connecting to the FXML
     }
 	
+	/**
+	 * @param event
+	 */
 	@FXML
 	private void helpAction(ActionEvent event)						//method that sets the help button to visible or invisible
 	{
