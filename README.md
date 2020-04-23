@@ -7,5 +7,3 @@ We were able to achieve all the functionality that we set out to code in our pro
 While card games are relatively common in the scope of java applications, we hoped to add our own twist by creating less than common games that we found interesting and fun to code.
 
 How to set Eclipse to display the suits of the cards: https://community.oracle.com/thread/2059625?start=15&tstart=0
-
-https://help.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line 
