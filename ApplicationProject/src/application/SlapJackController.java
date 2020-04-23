@@ -118,7 +118,7 @@ public class SlapJackController
 				while(!centerPile.isEmpty())							//while the center pile is empty
 				{
 					String szTemp = centerPile.pop();					//set a the center pile card to temporary string
-					computer.add(szTemp);								//add the card to the computer deck 
+					player.add(szTemp);								//add the card to the computer deck 
 				}
 				lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));//set the player deck label to current size
 				playerDeckSize += stackCount;							//set the player deck to current size
