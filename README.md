@@ -1,4 +1,4 @@
-Hit Me Or Hit Them is an application designed to have the user play against the computer in a variety of games. These games include War, Slapjack, <GAME>, and <GAME>.
+Hit Me Or Hit Them is an application designed to have the user play against the computer in a variety of games. These games include War, Slapjack, Beggar My Neighbor, and <GAME>.
   
 To run the application, simply download the zip file from the "Clone or download" drop down button. Once downloaded, extract all files from the zip, open the main.java file in your IDE, and hit run!
 
