@@ -504,10 +504,10 @@ public class warController
 	private void returnHandle(ActionEvent event)
     {
 		//Changing the root so that we can display the main screen -EMN 03-21-2020
-		Main.url=Main.class.getResource("titleScreen.fxml");
+		Main.url=Main.class.getResource("/fxml/titleScreen.fxml");
 		Main.loader.setLocation(Main.url);	
         try {
-			Main.scene.setRoot(FXMLLoader.load(getClass().getResource("titleScreen.fxml")));
+			Main.scene.setRoot(FXMLLoader.load(getClass().getResource("/fxml/titleScreen.fxml")));
 			Main.root=(AnchorPane)Main.loader.load();
 		      
 			Main.stage.setScene(Main.scene);

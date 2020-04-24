@@ -84,9 +84,6 @@ public class SlapJackController
 		
     }
 	
-	/**
-	 * @param event
-	 */
 	@FXML
 	private void changeDifficulty(ActionEvent event)					//method handles the change of difficulty button
 	{
@@ -107,9 +104,6 @@ public class SlapJackController
 		}
 		cpu.setDifficulty(diffInt);
 	}
-	/**
-	 * @param event
-	 */
 	@FXML
 	private void slapAction(ActionEvent event)							//this method takes cares of the slapping action
     {
@@ -124,7 +118,7 @@ public class SlapJackController
 				while(!centerPile.isEmpty())							//while the center pile is empty
 				{
 					String szTemp = centerPile.pop();					//set a the center pile card to temporary string
-					player.add(szTemp);								//add the card to the computer deck 
+					computer.add(szTemp);								//add the card to the computer deck 
 				}
 				lblPlayerDeck.setText(Integer.toString(playerDeckSize + stackCount));//set the player deck label to current size
 				playerDeckSize += stackCount;							//set the player deck to current size
@@ -172,10 +166,6 @@ public class SlapJackController
 		
     }
 	
-	/**
-	 * @param event
-	 * @throws InterruptedException
-	 */
 	@FXML
 	private void flipAction(ActionEvent event) throws InterruptedException	//this method takes care of the flip action
     {
@@ -270,9 +260,6 @@ public class SlapJackController
 			}
 	    }
 		
-		/**
-		 * @throws InterruptedException
-		 */
 		private void computerTurn() throws InterruptedException			//method that handles the computers turn 
 		{
 		if(!centerPile.isEmpty() 									//if the centerpile is not empty and the card on top is a Jack then do ---- 
@@ -388,16 +375,13 @@ public class SlapJackController
 		
 	}
 	
-	/**
-	 * @param event
-	 */
 	@FXML
 	private void returnAction(ActionEvent event)					//method that takes the user back to the title page after return button is clicked
     {
-		Main.url=Main.class.getResource("titleScreen.fxml");		//instantiating   
+		Main.url=Main.class.getResource("/fxml/titleScreen.fxml");		//instantiating   
 		Main.loader.setLocation(Main.url);							//loading fxml
         try {
-			Main.scene.setRoot(FXMLLoader.load(getClass().getResource("titleScreen.fxml")));//loading fxml
+			Main.scene.setRoot(FXMLLoader.load(getClass().getResource("/fxml/titleScreen.fxml")));//loading fxml
 			Main.root=(AnchorPane)Main.loader.load();				//loading the pane to the stage
 		      
 			Main.stage.setScene(Main.scene);						//adding scene to stage
@@ -410,9 +394,6 @@ public class SlapJackController
 		}															//Connecting to the FXML
     }
 	
-	/**
-	 * @param event
-	 */
 	@FXML
 	private void helpAction(ActionEvent event)						//method that sets the help button to visible or invisible
 	{

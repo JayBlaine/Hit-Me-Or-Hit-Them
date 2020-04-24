@@ -21,10 +21,10 @@ public class Main extends Application
 	{
 		try 
 		{
-			url=Main.class.getResource("titleScreen.fxml");
+			url=Main.class.getResource("/fxml/titleScreen.fxml");
 
 			loader.setLocation(url);	
-	        scene.setRoot(FXMLLoader.load(getClass().getResource("titleScreen.fxml")));//Connecting to the FXML
+	        scene.setRoot(FXMLLoader.load(getClass().getResource("/fxml/titleScreen.fxml")));//Connecting to the FXML
 	        root=(AnchorPane)loader.load();
 	      
 			primaryStage.setScene(scene);
