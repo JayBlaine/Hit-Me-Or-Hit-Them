@@ -1,11 +1,5 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-.root{
-    -fx-background-image: url("/images/greenbg.jpg");
-    -fx-background-position: center center;
-    -fx-background-size: cover;
-        
-    
-}
+
 #buttonHeartCenterDeck{
 	-fx-shape: "M 300 450 Q 200 400 200 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 400 300 Q 400 400 300 450 ";
 	-fx-background-color: red; 

@@ -10,7 +10,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.ImagePattern;
 
 /**
  * @author oep957
@@ -76,7 +84,10 @@ public class titleController
         try {
         	
 			Main.scene.setRoot(FXMLLoader.load(getClass().getResource("/fxml/BeggarMyNeighbor.fxml")));
-		    Main.scene.getStylesheets().add(getClass().getResource("/css/BeggarMyNeighbor.css").toExternalForm());
+		    Parent root = Main.scene.getRoot();
+		    BackgroundImage background= new BackgroundImage(new Image("/images/greenbg.jpg"), BackgroundRepeat.NO_REPEAT, null, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, false));
+		    ((Region) root).setBackground(new Background(background));
+			Main.scene.getStylesheets().add(getClass().getResource("/css/BeggarMyNeighbor.css").toExternalForm());
 			Main.stage.setScene(Main.scene);
 			Main.stage.setTitle("BeggarMyNeighbor"); //Changing the title of the primaryStage to better fit the purpose of the application
 			Main.stage.setHeight(800);
