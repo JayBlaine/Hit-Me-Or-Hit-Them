@@ -26,6 +26,11 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
@@ -68,8 +73,6 @@ public class BeggarMyNeighborController implements Initializable{
 	int winner;
 
 
-	
-	
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		hideBeginning();
 		addDeckImages();
@@ -154,6 +157,8 @@ public class BeggarMyNeighborController implements Initializable{
 										labelStatus.setText("No cards in deck to draw from!");
 										System.out.println("Player has no cards in deck to draw from");
 										winner = 1;
+										flip.setVisible(false);
+										flipCardLabel.setVisible(false);
 										winnerDecided();
 										break;
 									}else if(playerCard.getRank() > 10) {
@@ -244,6 +249,8 @@ public class BeggarMyNeighborController implements Initializable{
 				cpuTurn = false;
 				labelStatus.setText("No cards in deck to draw from!");
 				winner = 0;
+				flip.setVisible(false);
+				flipCardLabel.setVisible(false);
 				winnerDecided();
 				break;
 			}
@@ -438,8 +445,10 @@ public class BeggarMyNeighborController implements Initializable{
         try {
 			Main.scene.setRoot(FXMLLoader.load(getClass().getResource("/fxml/titleScreen.fxml")));//loading fxml
 			Main.root=(AnchorPane)Main.loader.load();				//loading the pane to the stage
+			Main.scene.getStylesheets().clear();
 			Main.stage.setScene(Main.scene);						//adding scene to stage
 			Main.stage.setTitle("Hit Me or Hit Them"); 				//Changing the title of the primaryStage to better fit the purpose of the application
+			
 			Main.stage.show();
 		}
         catch (IOException e) 
