@@ -19,39 +19,11 @@ import javafx.scene.shape.Rectangle;
 public class SlapJackController 
 {
 	@FXML
-	private Label lblGameOver;
+	private Label lblGameOver, lblDeck, lblDeck2, txtHelp, lblDiff, lblPlayerDeck, lblCpuDeck, lblStackSize, lblMsg;
 	@FXML
-	private Label lblDeck;
+	private Button btnFlip, btnSlap, btnDiff, btnHelp, btnReturn;
 	@FXML
-	private Label lblDeck2;
-	@FXML
-	private Label txtHelp;
-	@FXML
-	private Label lblDiff;
-	@FXML
-	private Label lblPlayerDeck;
-	@FXML
-	private Label lblCpuDeck;
-	@FXML
-	private Label lblStackSize;
-	@FXML
-	private Label lblMsg;
-	@FXML
-	private Button btnFlip;
-	@FXML
-	private Button btnSlap;
-	@FXML
-	private Button btnDiff;
-	@FXML
-	private Button btnHelp;
-	@FXML
-	private Button btnReturn;
-	@FXML
-	private Rectangle rect1;
-	@FXML
-	private Rectangle rect2;
-	@FXML
-	private Rectangle rect3;
+	private Rectangle rect1, rect2, rect3;
 	
 	private int diffInt = 1;
 	
@@ -76,8 +48,7 @@ public class SlapJackController
 	
 	@FXML
     private void initialize()											//this runs at the beginning "initializing" everything 
-    {
-		
+    {	
 		Card.shuffleDeck(startingDeck);									//shuffle deck
 		player = Card.dealCards(startingDeck, 26);						//give player deck 26 cards
 		computer = Card.dealCards(startingDeck, 26);					//give CPU deck 26 cards
@@ -107,7 +78,6 @@ public class SlapJackController
 	@FXML
 	private void slapAction(ActionEvent event)							//this method takes cares of the slapping action
     {
-		System.out.println("hit");										//system out print text
 
 		if(isSlappable)													//if slappable is true
 		{	
