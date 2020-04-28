@@ -16,6 +16,7 @@ public class Main extends Application
 	public static java.net.URL url;
 	public static Stage stage;
 	
+	
 	@Override
 	public void start(Stage primaryStage) 
 	{

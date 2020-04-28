@@ -1,8 +1,9 @@
-package application;
+package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
+import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import model.Card;
+import model.War;
 
 /**
  * The following class contains the action handlers for all the components on the warScreen.fxml. The class utilizes the War class and Card class for game logic.
@@ -21,12 +24,6 @@ import javafx.scene.shape.Rectangle;
  * 03-21-2020
  */
 
-
-
-/**
- * @author oep957
- *
- */
 public class warController
 {
 	//Initializing the components, so we can add information and make them visible. -EMN 03-21-2020
@@ -119,14 +116,37 @@ public class warController
     }
 	
 	
-	/**
-	 * @param event
+	/**Event handler for when the user clicks btnPlay. We are resetting the visuals and decks so we can play again
+	 * @param event ActionEvent
 	 */
 	@FXML
 	private void playHandle(ActionEvent event)
 	{
-		//To refill the deck set deck=Card.getDeck, then use the Card.shuffleDeck to shuffle the cards, then to split the deck use the Card.dealCards. (An example of how these methods work is in the initialize method). 
-		//You must also reset lblpDeck and lbldDeck. -EMN 03-21-2020
+		deck=Card.getDeck();
+		Card.shuffleDeck(deck);
+		player=Card.dealCards(deck, 26);
+		computer=Card.dealCards(deck, 26);
+		lblpDeck.setText("26");
+		lbldDeck.setText("26");
+	
+		lblpDeck.setTextFill(Color.WHITE);
+		lbldDeck.setTextFill(Color.WHITE);
+		
+		lblpDeck.setAlignment(Pos.CENTER);
+		lbldDeck.setAlignment(Pos.CENTER);
+		
+		lblp.setAlignment(Pos.CENTER);
+		lbld.setAlignment(Pos.CENTER);
+		lblpw1.setAlignment(Pos.CENTER);
+		lblpw2.setAlignment(Pos.CENTER);
+		lblpw3.setAlignment(Pos.CENTER);
+		lbldw1.setAlignment(Pos.CENTER);
+		lbldw2.setAlignment(Pos.CENTER);
+		lbldw3.setAlignment(Pos.CENTER);
+		txtHelp.setVisible(false);
+		btnPlay.setVisible(false);
+		btnFlip.setVisible(true);
+		btnCollect.setVisible(true);
 	}
 	/**
 	 * This is the event handler for btnFlip. We make the flipped cards visible (pflip and dflip) and fill the labels with the value of the top cards -EMN 03-21-2020
@@ -147,7 +167,7 @@ public class warController
     }
 	
 	/**
-	 * Event handler for btnWar
+	 * Event handler for btnWar. Updating visuals and drawing cards for war
 	 * @param event
 	 */
 	@FXML
@@ -198,7 +218,7 @@ public class warController
     }
 	
 	/**
-	 * This is the event handler for btnCollecrWar. We are checking who wins war
+	 * This is the event handler for btnCollecrWar. We are checking who wins war and updating visuals
 	 * @param event
 	 */
 	@FXML
@@ -293,7 +313,7 @@ public class warController
 		
     }
 	/**
-	 * This is the event handler for btnCollect
+	 * This is the event handler for btnCollect. Updating visuals to tell the user if they won or lost the round
 	 * @param event
 	 */
 	@FXML
@@ -359,11 +379,22 @@ public class warController
 		lblpDeck.setText(War.getDeckSize(player));
 		lbldDeck.setText(War.getDeckSize(computer));
 		
-		//To-Do add logic that checks if the player's deck size is 52 or if the computer deck size is 52. If the player's deck size is 52 (You can either use Integer.parseInt(lblpDeck.getText()) or the player.size()) method to get the deck size.
-		//Hide btnFlip and btnCollect using the setVisible(false) method then make btnPlay visible
-		//You can display the you win the game message in the txtHelp label using the txtHelp or you can create a different screen
-		//EMN 03-21-2020
-		
+		if(player.size()==52)
+		{	
+			btnFlip.setVisible(false);
+			btnCollect.setVisible(false);
+			btnPlay.setVisible(true);
+			txtHelp.setText("You won!!! Play again?");
+			txtHelp.setAlignment(Pos.CENTER);
+		}
+		else if(computer.size()==52)
+		{
+			btnFlip.setVisible(false);
+			btnCollect.setVisible(false);
+			btnPlay.setVisible(true);
+			txtHelp.setText("You lose!!! Play again?");
+			txtHelp.setAlignment(Pos.CENTER);
+		}
 	}
 	
 	/**
@@ -421,7 +452,7 @@ public class warController
 			computer.add(lbldw2.getText());
 			computer.add(lbldw3.getText());
 			
-			//Removing the cards that we got from the top of the decks because we added them to the bottom of the deck alread -EMN 03-21-2020
+			//Removing the cards that we got from the top of the decks because we added them to the bottom of the deck already -EMN 03-21-2020
 			player.remove(0);
 			computer.remove(0);
 			player.remove(0);
@@ -464,14 +495,26 @@ public class warController
 		btnCollect.setVisible(true);
 		btnCollectWar.setVisible(false);
 		
-		//To-Do add logic that checks if the player's deck size is 52 or if the computer deck size is 52. If the player's deck size is 52 (You can either use Integer.parseInt(lblpDeck.getText()) or the player.size()) method to get the deck size.
-		//Hide btnFlip and btnCollect using the setVisible(false) method then make btnPlay visible
-		//You can display the you win the game message in the txtHelp label using the txtHelp or you can create a different screen
-		//EMN 03-21-2020
+		if(player.size()==52)
+		{	
+			btnFlip.setVisible(false);
+			btnCollect.setVisible(false);
+			btnPlay.setVisible(true);
+			txtHelp.setText("You won!!! Play again?");
+			txtHelp.setAlignment(Pos.CENTER);
+		}
+		else if(computer.size()==52)
+		{
+			btnFlip.setVisible(false);
+			btnCollect.setVisible(false);
+			btnPlay.setVisible(true);
+			txtHelp.setText("You lose!!! Play again?");
+			txtHelp.setAlignment(Pos.CENTER);
+		}
 		
 	}
 	/**
-	 * This is the event handler for txtHelp.
+	 * This is the event handler for txtHelp. We display the instructions for the game
 	 * @param event
 	 */
 	@FXML
@@ -497,7 +540,7 @@ public class warController
     }
 	
 	/**
-	 * Event handler for the Return to Menu button 
+	 * Event handler for the Return to Menu button. We switch the fxml to the titleScreen.fxml
 	 * @param event
 	 */
 	@FXML
@@ -516,9 +559,8 @@ public class warController
 		}
         catch (IOException e) 
         {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}//Connecting to the FXML
+		}
 
     }
 	

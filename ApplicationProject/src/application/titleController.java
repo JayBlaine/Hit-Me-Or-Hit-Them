@@ -27,6 +27,9 @@ import javafx.scene.paint.ImagePattern;
 public class titleController 
 {
 	
+	/**Event handler for when the slap jack button is clicked. We are changing the fxml to the SlapJAckScreen.fxml
+	 * @param event Action Event
+	 */
 	@FXML
 	private void handle(ActionEvent event)
     {
@@ -50,6 +53,9 @@ public class titleController
 		 
     }
 	
+	/**Action Handler for when the war button is clicked. Changing the fxml to the warScreen.fxml
+	 * @param event ActionEvent
+	 */
 	@FXML
 	private void handleWar(ActionEvent event)
     {
@@ -76,6 +82,10 @@ public class titleController
     }
 	
 	
+	/**Action Handler for when the Beggar My Neighbor game. We will change the fxml to BeggarMyNeighbor.fxml
+	 * @param event ActionEvent 
+	 * @throws IOException
+	 */
 	@FXML
 	private void handlePlayBMN(ActionEvent event) throws IOException
     {

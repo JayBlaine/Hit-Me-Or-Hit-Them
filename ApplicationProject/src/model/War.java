@@ -1,19 +1,18 @@
-package application;
+package model;
 
 import java.util.ArrayList;
 
-/**
- * The following class contains the logic used for the game of War. It is called by the WarController class
+
+/**The following class contains the logic used for the game of War. It is called by the WarController class
  * @author Elizabeth Nguyen oep957
  *
  */
-
 public class War 
 {
 	
 	/**
 	 * Returns the String value of the size of a deck. The returned value is for lblpDeck and lbldDeck
-	 * @param deck ArrayList<String>
+	 * @param deck ArrayList String
 	 * @return ret String
 	 */
 	public static String getDeckSize(ArrayList<String> deck)
@@ -25,7 +24,6 @@ public class War
 		return ret;
 				
 	}
-	
 	
 	
 	/**
