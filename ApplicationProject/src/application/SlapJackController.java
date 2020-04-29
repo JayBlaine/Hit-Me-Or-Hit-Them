@@ -16,6 +16,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+/*
+ * @author nqg320
+ * 		   Jarrod Ragsdale
+ * Implements slapjack ui
+ */
 public class SlapJackController 
 {
 	@FXML
