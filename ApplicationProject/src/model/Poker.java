@@ -1,4 +1,4 @@
-		package model;
+		package application;
 
 		import java.util.ArrayList;
 		import java.util.Arrays;
@@ -172,7 +172,7 @@
 				 * high card          returns 1 
 				 */
 				
-				// populate the arrays
+				//populate the arrays
 				for(i = 0; i < 5; i++) 
 				{
 					
@@ -237,6 +237,8 @@
 						if(cpuRankArr[i]==cpuRankArr[i+1])
 						{
 							count++;
+						} else {
+							count =0;
 						}
 						if(count==3)
 						{
@@ -253,26 +255,29 @@
 					for(i =0; i <5 ;i++)
 					{
 						
-						if(cpuRankArr[i]== cpuRankArr[i+1])
+						if(cpuRankArr[i]== cpuRankArr[i+1]) // 0 & 1 equal
 						{
-							count++;
+							count++; // count goes up
 						
-						if(count==2)
+						if(count==1) // if there's a pair
 						{
-							match3 = cpuRankArr[i];
-							if(match3 == cpuRankArr[i+1])
+							int temp = cpuRankArr[i+1]; // equal to second element
+							if(temp == cpuRankArr[i+2]) // if second element equals third element
 							{
+								match3 = cpuRankArr[i+2]; // match3 = third element
 								matchThree = true;
+								//System.out.println("Matched 3: "+ match3);
 								if(handRank < 4)
 								{
 									handRank = 4;
-								}
+								} 
+							} else {
+								count = 0;
 							}
 							
 							
 						}
 						}
-						
 					}
 				} catch(ArrayIndexOutOfBoundsException e) {count = 0;}
 				
@@ -284,24 +289,25 @@
 					for(i =0; i <5 ;i++)
 					{
 						
-						if(cpuRankArr[i]==cpuRankArr[i+1])
+						if(cpuRankArr[i]==cpuRankArr[i+1] && cpuRankArr[i] != match3)
 						{
 							count++;
 						
-						if(count==1)
-						{
-							
-							match2 = i;
-							
-							if(match2 == match3)
+							if(count==1)
 							{
-								matchPair = true;
+								
+								match2 = cpuRankArr[i];
+								//System.out.println("Matched 2: " + match2);
+								//System.out.println("Matched 3 is: " + match3);
+								if(match2 != match3)
+								{
+									matchPair = true;
+								}
+								if(handRank < 2) 
+								{
+									handRank = 2;
+								}
 							}
-							if(handRank < 2) 
-							{
-								handRank = 2;
-							}
-						}
 							
 						}
 					}
@@ -316,12 +322,13 @@
 					{
 						for(int j = i + 1; j < 5; j++)
 						{
-							if(cpuRankArr[i]==cpuRankArr[j])
+							if(cpuRankArr[i]==cpuRankArr[j] && cpuRankArr[i] != match2 && matchThree != true)
 							{
 								count++;
+								//System.out.println("Count in 2 pair = " + count);
 							}
 						}
-						if(count==2)
+						if(count==1)
 						{
 							if(handRank < 3)
 							{
@@ -333,6 +340,8 @@
 				}catch(ArrayIndexOutOfBoundsException e) {count = 0;}
 				
 				
+				
+				//System.out.println("Pair = " + matchPair + " Three is = " + matchThree);
 				
 				// if it's a straight and all of the suits are the same = straight flush
 				if(handRank == 5 && checkCPUSuits == true) 
@@ -347,9 +356,7 @@
 					handRank = 7;
 				}
 				// if no matched but all the same suit
-				if(handRank==0 
-						&& checkCPUSuits == true
-						&& handRank < 6)
+				if(checkCPUSuits == true && handRank < 6)
 				{
 					handRank = 6;
 				}
@@ -479,27 +486,32 @@
 					for(i =0; i <5 ;i++)
 					{
 						
-						if(playerRankArr[i]== playerRankArr[i+1])
+						if(playerRankArr[i]== playerRankArr[i+1]) // 0 & 1 equal
 						{
-							count++;
+							count++; // count goes up
 						
-						if(count==2)
+						if(count==1) // if there's a pair
 						{
-							match3 = playerRankArr[i];
-							if(match3 == playerRankArr[i+1])
+							int temp = playerRankArr[i+1]; // equal to second element
+							if(temp == playerRankArr[i+2]) // if second element equals third element
 							{
+								match3 = playerRankArr[i+2]; // match3 = third element
 								matchThree = true;
+								//System.out.println("Matched 3: "+ match3);
 								if(handRank < 4)
 								{
 									handRank = 4;
-								}
+								} 
+							} else {
+								count = 0;
 							}
 							
 							
 						}
 						}
-						
 					}
+					
+					
 				} catch(ArrayIndexOutOfBoundsException e) {count = 0;}
 				
 				//System.out.println("Three match: " + matchThree);
@@ -510,27 +522,29 @@
 					for(i =0; i <5 ;i++)
 					{
 						
-						if(playerRankArr[i]==playerRankArr[i+1])
+						if(playerRankArr[i]==playerRankArr[i+1] && playerRankArr[i] != match3)
 						{
 							count++;
 						
-						if(count==1)
-						{
-							
-							match2 = i;
-							
-							if(match2 == match3)
+							if(count==1)
 							{
-								matchPair = true;
+								
+								match2 = playerRankArr[i];
+								//System.out.println("Matched 2: " + match2);
+								//System.out.println("Matched 3 is: " + match3);
+								if(match2 != match3)
+								{
+									matchPair = true;
+								}
+								if(handRank < 2) 
+								{
+									handRank = 2;
+								}
 							}
-							if(handRank < 2) 
-							{
-								handRank = 2;
-							}
-						}
 							
 						}
 					}
+					
 				} catch(ArrayIndexOutOfBoundsException e) {count = 0;}
 				
 				//System.out.println("Two match: " + matchPair);
@@ -542,9 +556,10 @@
 					{
 						for(int j = i + 1; j < 5; j++)
 						{
-							if(playerRankArr[i]==playerRankArr[j])
+							if(playerRankArr[i]==playerRankArr[j] && playerRankArr[i] != match2 && matchThree != true)
 							{
 								count++;
+								//System.out.println("Count in 2 pair = " + count);
 							}
 						}
 						if(count==1)
@@ -555,27 +570,27 @@
 							}
 						}
 					}
+					
+					
 			
 				}catch(ArrayIndexOutOfBoundsException e) {count = 0;}
 				
+				System.out.println("Pair = " + matchPair + " Three is = " + matchThree);
 				
-				
-				// if its a straight and flush then its a straight flush
+				// if it's a straight and all of the suits are the same = straight flush
 				if(handRank == 5 && checkPlayerSuits == true) 
 				{
 					handRank = 9;
 				}
-				// check for a full house
+				// if there's a 3 of a kind and a pair it's a full house
 				if(matchPair == true 
 						&& matchThree == true
 						&& handRank < 7)
 				{
 					handRank = 7;
 				}
-				// check for a flush
-				if(handRank==0 
-						&& checkPlayerSuits == true
-						&& handRank < 6)
+				// if no matched but all the same suit
+				if(checkPlayerSuits == true && handRank < 6)
 				{
 					handRank = 6;
 				}
@@ -592,7 +607,7 @@
 				 * high card          returns 1 
 				 */
 				
-				System.out.println("User hand rank: " + handRank);
+				System.out.println("Player hand rank: " + handRank);
 				
 				
 				return handRank;
