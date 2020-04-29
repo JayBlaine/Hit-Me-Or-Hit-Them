@@ -19,6 +19,11 @@ import javafx.scene.shape.Rectangle;
 import model.Card;
 import model.Computer;
 
+/**
+ * @author Jarrod Ragsdale
+ * 		   nqg320
+ * 		   Handles slapjack logic/ui
+ */
 public class SlapJackController 
 {
 	@FXML
@@ -96,7 +101,7 @@ public class SlapJackController
 	 * Adjusts computer response time/range of error
 	 */
 	@FXML
-	private void changeDifficulty(ActionEvent event)					//method handles the change of difficulty button
+	public void changeDifficulty(ActionEvent event)					//method handles the change of difficulty button
 	{
 		switch (diffInt) {												//switch statement if difficulty is easy medium or hard set it to so 
 			case 1:
@@ -284,7 +289,7 @@ public class SlapJackController
 		 * @throws InterruptedException
 		 * Handles flip button for computer turn
 		 */
-		private void computerTurn() throws InterruptedException			//method that handles the computers turn 
+		public void computerTurn() throws InterruptedException			//method that handles the computers turn 
 		{
 		if(!centerPile.isEmpty() 									//if the centerpile is not empty and the card on top is a Jack then do ---- 
 				&& (centerPile.peek().equals("Jack\u2660") 
