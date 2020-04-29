@@ -1,0 +1,110 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root{
+    -fx-background-image: url("/images/greenbg.jpg");
+    -fx-background-position: center center;
+    -fx-background-size: cover;
+        
+    
+}
+#buttonHeart1{
+	-fx-shape: "M 300 450 Q 200 400 200 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 400 300 Q 400 400 300 450 ";
+	-fx-background-color: red; 
+}
+
+#buttonClub1{
+	-fx-shape: "M 300 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 300 200 A 50 50 0 1 1 300 300 L 300 300 A 50 50 0 1 1 300 350 A 50 50 0 1 1 300 300 Q 300 350 300 350 L 300 400 L 300 350 Q 300 400 350 400 L 250 400 Q 300 400 300 350 ";
+	-fx-background-color: black;
+}
+
+#buttonDiamond1{
+	-fx-shape: "M 300 300 L 350 200 L 400 300 L 350 400 L 300 300 ";
+	-fx-background-color: red;
+}
+
+#buttonSpade1{
+	-fx-shape: "M 500 350 A 50 50 0 1 1 400 350 A 50 50 0 1 1 300 350 Q 300 250 400 200 Q 500 250 500 350 A 50 50 0 1 1 400 350 Q 400 450 450 450 L 350 450 Q 400 450 400 350 ";
+	-fx-background-color: black;
+}
+
+#buttonHeart2{
+	-fx-shape: "M 300 450 Q 200 400 200 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 400 300 Q 400 400 300 450 ";
+	-fx-background-color: red; 
+}
+
+#buttonClub2{
+	-fx-shape: "M 300 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 300 200 A 50 50 0 1 1 300 300 L 300 300 A 50 50 0 1 1 300 350 A 50 50 0 1 1 300 300 Q 300 350 300 350 L 300 400 L 300 350 Q 300 400 350 400 L 250 400 Q 300 400 300 350 ";
+	-fx-background-color: black;
+}
+
+#buttonDiamond2{
+	-fx-shape: "M 300 300 L 350 200 L 400 300 L 350 400 L 300 300 ";
+	-fx-background-color: red;
+}
+
+#buttonSpade5{
+	-fx-shape: "M 500 350 A 50 50 0 1 1 400 350 A 50 50 0 1 1 300 350 Q 300 250 400 200 Q 500 250 500 350 A 50 50 0 1 1 400 350 Q 400 450 450 450 L 350 450 Q 400 450 400 350 ";
+	-fx-background-color: black;
+}
+
+#buttonHeart5{
+	-fx-shape: "M 300 450 Q 200 400 200 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 400 300 Q 400 400 300 450 ";
+	-fx-background-color: red; 
+}
+
+#buttonClub5{
+	-fx-shape: "M 300 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 300 200 A 50 50 0 1 1 300 300 L 300 300 A 50 50 0 1 1 300 350 A 50 50 0 1 1 300 300 Q 300 350 300 350 L 300 400 L 300 350 Q 300 400 350 400 L 250 400 Q 300 400 300 350 ";
+	-fx-background-color: black;
+}
+
+
+#buttonDiamond5{
+	-fx-shape: "M 300 300 L 350 200 L 400 300 L 350 400 L 300 300 ";
+	-fx-background-color: red;
+}
+
+#buttonSpade2{
+	-fx-shape: "M 500 350 A 50 50 0 1 1 400 350 A 50 50 0 1 1 300 350 Q 300 250 400 200 Q 500 250 500 350 A 50 50 0 1 1 400 350 Q 400 450 450 450 L 350 450 Q 400 450 400 350 ";
+	-fx-background-color: black;
+}
+
+#buttonHeart3{
+	-fx-shape: "M 300 450 Q 200 400 200 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 400 300 Q 400 400 300 450 ";
+	-fx-background-color: red; 
+}
+
+#buttonClub3{
+	-fx-shape: "M 300 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 300 200 A 50 50 0 1 1 300 300 L 300 300 A 50 50 0 1 1 300 350 A 50 50 0 1 1 300 300 Q 300 350 300 350 L 300 400 L 300 350 Q 300 400 350 400 L 250 400 Q 300 400 300 350 ";
+	-fx-background-color: black;
+}
+
+
+#buttonDiamond3{
+	-fx-shape: "M 300 300 L 350 200 L 400 300 L 350 400 L 300 300 ";
+	-fx-background-color: red;
+}
+
+#buttonSpade3{
+	-fx-shape: "M 500 350 A 50 50 0 1 1 400 350 A 50 50 0 1 1 300 350 Q 300 250 400 200 Q 500 250 500 350 A 50 50 0 1 1 400 350 Q 400 450 450 450 L 350 450 Q 400 450 400 350 ";
+	-fx-background-color: black;
+}
+
+#buttonHeart4{
+	-fx-shape: "M 300 450 Q 200 400 200 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 400 300 Q 400 400 300 450 ";
+	-fx-background-color: red; 
+}
+
+#buttonClub4{
+	-fx-shape: "M 300 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 300 300 A 50 50 0 1 1 300 200 A 50 50 0 1 1 300 300 L 300 300 A 50 50 0 1 1 300 350 A 50 50 0 1 1 300 300 Q 300 350 300 350 L 300 400 L 300 350 Q 300 400 350 400 L 250 400 Q 300 400 300 350 ";
+	-fx-background-color: black;
+}
+
+
+#buttonDiamond4{
+	-fx-shape: "M 300 300 L 350 200 L 400 300 L 350 400 L 300 300 ";
+	-fx-background-color: red;
+}
+
+#buttonSpade4{
+	-fx-shape: "M 500 350 A 50 50 0 1 1 400 350 A 50 50 0 1 1 300 350 Q 300 250 400 200 Q 500 250 500 350 A 50 50 0 1 1 400 350 Q 400 450 450 450 L 350 450 Q 400 450 400 350 ";
+	-fx-background-color: black;
+}

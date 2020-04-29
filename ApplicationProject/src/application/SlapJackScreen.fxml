@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="297.0" prefWidth="565.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.SlapJackController">
+<AnchorPane prefHeight="297.0" prefWidth="565.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.SlapJackController">
   <children>
     <Label fx:id="lblGameOver" layoutX="14.0" layoutY="179.0" prefHeight="131.0" prefWidth="537.0" text="" textAlignment="CENTER" textFill="WHITE">
       <font>
