@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="297.0" prefWidth="565.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.warController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="297.0" prefWidth="565.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.warController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e1e1e" height="89.0" layoutX="86.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="69.0" />
       <Rectangle fx:id="lbldeck" arcHeight="5.0" arcWidth="5.0" fill="#1e1e1e" height="89.0" layoutX="427.0" layoutY="134.0" stroke="BLACK" strokeType="INSIDE" width="69.0" />

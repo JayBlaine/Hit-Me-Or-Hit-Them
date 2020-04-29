@@ -26,11 +26,6 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
@@ -48,9 +43,13 @@ public class BeggarMyNeighborController implements Initializable{
 	private Button play, deal, flip, helpButton, flipCounter;
 	@FXML
 	private Label winnerLabel, flipCardLabel, centerDeckTopNumber, centerDeckBottomNumber, labelStatus, cpuDeckSize, playerDeckSize;
+
 	
 	private Stage popupwindow = new Stage();
 	private Image image = new Image("/images/deck.jpg",false);
+
+	//testing 
+	private PauseTransition wait = new PauseTransition(Duration.seconds(1));
 
 	//instances for decks
 	private ArrayList<Card> deckOfCards = new ArrayList<Card>(52);
@@ -68,9 +67,9 @@ public class BeggarMyNeighborController implements Initializable{
 	int cardRank;
 	int winner;
 
-	/**
-	 * initialize method, runs at the beginning of application
-	 */
+
+	
+	
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		hideBeginning();
 		addDeckImages();
@@ -81,10 +80,7 @@ public class BeggarMyNeighborController implements Initializable{
 
 	}
 
-	/**
-	 * method that takes care of the action when user clicks on play button
-	 * @param event
-	 */
+
 	@FXML
 	public void handlePlay(ActionEvent event) {
 		helpButton.setVisible(false);
@@ -92,11 +88,6 @@ public class BeggarMyNeighborController implements Initializable{
 		deal.setVisible(true);
 		deck.setVisible(true);
 	}
-	
-	/**
-	 * method that takes care of the action when user clicks on deal button
-	 * @param event
-	 */
 	@FXML
 	public void handleDeal(ActionEvent event) {
 		deal.setVisible(false);
@@ -111,10 +102,6 @@ public class BeggarMyNeighborController implements Initializable{
 		}
 	}
 	
-	/**
-	 * method that takes care of the action of when user clicks on the flip button
-	 * @param event
-	 */
 	@FXML
 	public void handleFlip(ActionEvent event) {
 			flip.setVisible(false);
@@ -167,8 +154,6 @@ public class BeggarMyNeighborController implements Initializable{
 										labelStatus.setText("No cards in deck to draw from!");
 										System.out.println("Player has no cards in deck to draw from");
 										winner = 1;
-										flip.setVisible(false);
-										flipCardLabel.setVisible(false);
 										winnerDecided();
 										break;
 									}else if(playerCard.getRank() > 10) {
@@ -239,9 +224,6 @@ public class BeggarMyNeighborController implements Initializable{
 
 	}
 
-	/**
-	 * method that takes care of the cpu logic to flip 
-	 */
 	public void computerFlip() {
 		labelStatus.setText("");
 		centerCard.setVisible(true);
@@ -262,8 +244,6 @@ public class BeggarMyNeighborController implements Initializable{
 				cpuTurn = false;
 				labelStatus.setText("No cards in deck to draw from!");
 				winner = 0;
-				flip.setVisible(false);
-				flipCardLabel.setVisible(false);
 				winnerDecided();
 				break;
 			}
@@ -368,18 +348,11 @@ public class BeggarMyNeighborController implements Initializable{
 
 	}
 	
-	/**
-	 * method that sets visibility for GUI
-	 */
+	
 	public void givePlayerTurn() {
 		flip.setVisible(true);					//turn goes to player after computer is done
 		flipCardLabel.setVisible(true);
 	}
-	
-	/**
-	 * method that returns the amount of times a player must flip card
-	 * @param rank
-	 */
 	public void computeLoop(int rank) {
 		switch(rank) {
 		case 11:
@@ -398,9 +371,7 @@ public class BeggarMyNeighborController implements Initializable{
 		
 	}
 
-	/**
-	 * method that decides a winner
-	 */
+
 	private void winnerDecided() {
 		hideBeginning();
 		labelStatus.setVisible(false);
@@ -417,20 +388,14 @@ public class BeggarMyNeighborController implements Initializable{
 
 		}
 	}
-	
-	/**
-	 * method that sets the rank of card for GUI
-	 * @param rank
-	 */
+
 	public void setCardNumber(int rank) {
 		centerDeckTopNumber.setText(Integer.toString(rank));
 		centerDeckBottomNumber.setText(Integer.toString(rank));
 
 	}
+	
 
-	/**
-	 * method that hides the graphics for GUI
-	 */
 	public void hideCenterDeckGraphics() {
 		buttonHeartCenterDeck.setVisible(false);
 		buttonHeartArrowCenterDeck.setVisible(false);
@@ -438,26 +403,16 @@ public class BeggarMyNeighborController implements Initializable{
 		buttonLeafCenterDeck.setVisible(false);
 	}
 
-	/**
-	 * method that hides the deck numbers for GUI
-	 */
 	public void hideCenterDeckNumbers(){
 		centerDeckTopNumber.setVisible(false);
 		centerDeckBottomNumber.setVisible(false);
 	}
 	
-	/**
-	 * method that shows the center deck numbers for GUI
-	 */
 	public void showCenterDeckNumbers(){
 		centerDeckTopNumber.setVisible(true);
 		centerDeckBottomNumber.setVisible(true);
 	}
 	
-	/**
-	 * method that picks the graphic that is showed based on the current cards suit
-	 * @param suit
-	 */
 	public void pickCenterDeckGraphic(String suit) {
 		switch(suit) {
 		case "Hearts":
@@ -475,10 +430,6 @@ public class BeggarMyNeighborController implements Initializable{
 		}//end of switch statement
 	}
 
-	/**
-	 * method that takes care of the action of when the user clicks on return to menu button
-	 * @param event
-	 */
 	@FXML
 	private void returnAction(ActionEvent event)					//method that takes the user back to the title page after return button is clicked
     {
@@ -487,10 +438,8 @@ public class BeggarMyNeighborController implements Initializable{
         try {
 			Main.scene.setRoot(FXMLLoader.load(getClass().getResource("/fxml/titleScreen.fxml")));//loading fxml
 			Main.root=(AnchorPane)Main.loader.load();				//loading the pane to the stage
-			Main.scene.getStylesheets().clear();
 			Main.stage.setScene(Main.scene);						//adding scene to stage
 			Main.stage.setTitle("Hit Me or Hit Them"); 				//Changing the title of the primaryStage to better fit the purpose of the application
-			
 			Main.stage.show();
 		}
         catch (IOException e) 
@@ -499,20 +448,17 @@ public class BeggarMyNeighborController implements Initializable{
 		}															//Connecting to the FXML
     }
 	
-	/**
-	 * method that takes care of the action of when the user clicks on the help button 
-	 * @param event
-	 */
+	
 	@FXML
 	public void handleHelpButton(ActionEvent event) {
 		popupwindow.setTitle("How to Play");
 		Label label= new Label("\tStart the game by flipping the card and putting it in the middle of the table. If the card has a rank of 2 to 10, the next person of CPU will flip their card and place it in the middle.\r\n" + 
 				"\r\n" + 
 				"\tWhen a face card or an Ace is flipped up, the next player must pay an \"honor\" according to the following:\r\n" + 
-				"[â€¢]\tIf an Ace is played, the next player must turn over four cards, one at a time.\r\n" + 
-				"[â€¢]\tIf a King is played, the next player must turn over three cards, one at a time.\r\n" + 
-				"[â€¢]\tIf a Queen is played, the next player must turn over two cards, one at a time.\r\n" + 
-				"[â€¢]\tIf a Jack is played, the next player must turn over one card.\r\n\n" + 
+				"[•]\tIf an Ace is played, the next player must turn over four cards, one at a time.\r\n" + 
+				"[•]\tIf a King is played, the next player must turn over three cards, one at a time.\r\n" + 
+				"[•]\tIf a Queen is played, the next player must turn over two cards, one at a time.\r\n" + 
+				"[•]\tIf a Jack is played, the next player must turn over one card.\r\n\n" + 
 				"\tIf all of the cards in the honor are number cards, the player who played the court card collects all of the cards in the middle of the table. However, if one of the cards in the honor is a court card, the player paying the honor stops immediately and the turn goes to the next player and they must pay an honor based on the protocol above. If that honor is paid with only number cards, the cards in the middle of the table are collected by the last player who played a court card.\r\n" + 
 				"\r\n" + 
 				"\tThis continues until one player wins the pile. That player then puts the pile at the bottom of his or her stack, face down. If a player runs out of cards then they lose!\r\n" + 
@@ -529,9 +475,7 @@ public class BeggarMyNeighborController implements Initializable{
 		popupwindow.showAndWait();
 	}
 
-	/**
-	 * method that deals the card
-	 */
+
 	public void dealCards() {
 		for(int j=1; j<14; j++)							//add Cards to deckOfCards
 			deckOfCards.add(new Card(j, "Spades"));
@@ -563,19 +507,13 @@ public class BeggarMyNeighborController implements Initializable{
 		
 		}
 	}
-	
-	/**
-	 * method that adds images to the deck images, graphics 
-	 */
+
 	public void addDeckImages() {
 		deck.setFill(new ImagePattern(image));
 		playersCard.setFill(new ImagePattern(image));
 		compCard.setFill(new ImagePattern(image));;
 	}
 	
-	/**
-	 * hides the decks, cards, and labels before the game starts
-	 */
 	public void hideBeginning() {
 
 		compCard.setVisible(false);
