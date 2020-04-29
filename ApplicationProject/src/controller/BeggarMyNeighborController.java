@@ -42,7 +42,7 @@ public class BeggarMyNeighborController implements Initializable{
 	private Label winnerLabel, flipCardLabel, centerDeckTopNumber, centerDeckBottomNumber, labelStatus, cpuDeckSize, playerDeckSize;
 
 	private Stage popupwindow = new Stage();
-	private Image image = new Image("/images/deck.jpg",false);
+	Image image = new Image("/images/deck.jpg");
 
 
 	//instances for decks
@@ -116,14 +116,8 @@ public class BeggarMyNeighborController implements Initializable{
 			hideCenterDeckGraphics();
 			
 			while(playerTurn) {	
-				
-				
-
 					
 				playerCard = playerDeck.peek();						//put try catch here later, if no card in deck the catch the exception and change winnerDecided to true
-				
-				
-				
 				
 				if(playerCard == null) {							//if card is null then break from while loop and decide the winner
 					playerTurn = false;
@@ -133,9 +127,7 @@ public class BeggarMyNeighborController implements Initializable{
 					winnerDecided();
 					break;
 				}
-					
-					
-					
+
 					///////////////////////////
 						while(counter) {
 							cardRank = cpuCard.getRank();				//get rank of the opponents to determine how many tries are allowed to counter face card
@@ -412,9 +404,24 @@ public class BeggarMyNeighborController implements Initializable{
 	 * @param rank
 	 */
 	public void setCardNumber(int rank) {
+		
+		if(rank == 11) {
+			centerDeckTopNumber.setText("J");
+			centerDeckBottomNumber.setText("J");
+		} else if ( rank == 12) {
+			centerDeckTopNumber.setText("Q");
+			centerDeckBottomNumber.setText("Q");
+		} else if ( rank == 13) {
+			centerDeckTopNumber.setText("K");
+			centerDeckBottomNumber.setText("K");
+		} else if ( rank == 14) {
+			centerDeckTopNumber.setText("A");
+			centerDeckBottomNumber.setText("A");
+		}else {
 		centerDeckTopNumber.setText(Integer.toString(rank));
 		centerDeckBottomNumber.setText(Integer.toString(rank));
-
+		}
+		
 	}
 	
 	/**
