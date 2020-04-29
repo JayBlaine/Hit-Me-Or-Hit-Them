@@ -18,35 +18,19 @@
             <Rectangle fx:id="card2" arcHeight="10.0" arcWidth="5.0" fill="#f8f8f8" height="135.0" layoutX="140.0" layoutY="203.0" stroke="BLACK" strokeType="OUTSIDE" visible="false" width="95.0" />
             <Button fx:id="buttonClub1" layoutX="43.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/club.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonHeart1" layoutX="43.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/heart.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonSpade1" layoutX="43.0" layoutY="246.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/spade.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonDiamond1" layoutX="43.0" layoutY="246.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/diamond.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Label fx:id="BottomNumber1" layoutX="88.0" layoutY="305.0" text="A" visible="false">
                <font>
@@ -119,131 +103,67 @@
             </Label>
             <Button fx:id="buttonClub2" layoutX="168.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/club.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonClub3" layoutX="299.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/club.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonClub4" layoutX="431.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/club.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonClub5" layoutX="560.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/club.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonHeart2" layoutX="168.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/heart.png" />
-                     </image>
-                  </ImageView>
+                  
                </graphic></Button>
             <Button fx:id="buttonHeart3" layoutX="298.0" layoutY="247.0" maxHeight="49.0" maxWidth="49.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/heart.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonHeart4" layoutX="431.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/heart.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonHeart5" layoutX="560.0" layoutY="246.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/heart.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonSpade2" layoutX="168.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/spade.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonSpade3" layoutX="298.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/spade.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonSpade4" layoutX="431.0" layoutY="246.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/spade.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonSpade5" layoutX="560.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/spade.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonDiamond2" layoutX="168.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/diamond.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonDiamond3" layoutX="298.0" layoutY="246.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/diamond.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonDiamond4" layoutX="431.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/diamond.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Button fx:id="buttonDiamond5" layoutX="560.0" layoutY="247.0" maxHeight="49.0" maxWidth="40.0" minHeight="49.0" minWidth="40.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="40.0" text="  " visible="false">
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/diamond.png" />
-                     </image>
-                  </ImageView>
+
                </graphic></Button>
             <Label fx:id="statusLabel" layoutX="226.0" layoutY="33.0" prefHeight="78.0" prefWidth="199.0" textFill="WHITE" />
                     

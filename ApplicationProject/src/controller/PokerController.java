@@ -162,19 +162,19 @@ public class PokerController {
 		String rank = tokenized[0];
 		String suit = tokenized[1];	
 		System.out.print(tokenized[1]);
-		if(rank == "1") {
+		if(rank.equals("1")) {
 			TopNumber1.setText("A");
 			BottomNumber1.setText("A");
 		}
-		else if(rank == "11") {
+		else if(rank.equals("11")) {
 			TopNumber1.setText("J");
 			BottomNumber1.setText("J");
 		}
-		else if(rank == "12") {
+		else if(rank.equals("12")) {
 			TopNumber1.setText("Q");
 			BottomNumber1.setText("Q");
 		}
-		else if(rank == "13") {
+		else if(rank.equals("13")) {
 			TopNumber1.setText("K");
 			BottomNumber1.setText("K");
 		}
@@ -185,17 +185,38 @@ public class PokerController {
 		card1.setVisible(true); // make everything visible for card
 		TopNumber1.setVisible(true);
 		BottomNumber1.setVisible(true);
-		if(suit == "Hearts") {
+		if(suit.equals("Hearts")) {
 			buttonHeart1.setVisible(true); // make suit visible
+			
+			buttonDiamond1.setVisible(false); // make suit visible
+			buttonSpade1.setVisible(false); // make suit visible
+			buttonClub1.setVisible(false); // make suit visible
+
 		}
-		else if(suit == "Diamonds") {
+		else if(suit.equals("Diamonds")) {
 			buttonDiamond1.setVisible(true); // make suit visible
+			
+			buttonHeart1.setVisible(false); // make suit visible
+			buttonSpade1.setVisible(false); // make suit visible
+			buttonClub1.setVisible(false); // make suit visible
+
 		}
-		else if(suit == "Spades") {
+		else if(suit.equals("Spades")) {
 			buttonSpade1.setVisible(true); // make suit visible
+			
+			buttonDiamond1.setVisible(false); // make suit visible
+			buttonHeart1.setVisible(false); // make suit visible
+			buttonClub1.setVisible(false); // make suit visible
+
+			
 		}
-		else if(suit == "Clubs") {
+		else if(suit.equals("Clubs")) {
 			buttonClub1.setVisible(true); // make suit visible
+			
+			buttonSpade1.setVisible(false); // make suit visible
+			buttonDiamond1.setVisible(false); // make suit visible
+			buttonHeart1.setVisible(false); // make suit visible
+
 		}
 		popHand.pop();
 		
@@ -203,7 +224,7 @@ public class PokerController {
 		tokenized = (popHand.getFirst()).toString().split(" "); 
 		rank = tokenized[0]; 
 		suit = tokenized[1];
-		if(rank == "1") {
+		if(rank.equals("1")) {
 			TopNumber2.setText("A");
 			BottomNumber2.setText("A");
 		}
@@ -226,37 +247,57 @@ public class PokerController {
 		card2.setVisible(true); 
 		TopNumber2.setVisible(true);
 		BottomNumber2.setVisible(true);
-		if(suit == "Hearts") {
-			buttonHeart2.setVisible(true);
+		if(suit.equals("Hearts")) {
+			buttonHeart2.setVisible(true); // make suit visible
+			
+			buttonDiamond2.setVisible(false); // make suit visible
+			buttonSpade2.setVisible(false); // make suit visible
+			buttonClub2.setVisible(false); // make suit visible
+
 		}
-		else if(suit == "Diamonds") {
-			buttonDiamond2.setVisible(true);
+		else if(suit.equals("Diamonds")) {
+			buttonDiamond2.setVisible(true); // make suit visible
+			
+			buttonHeart2.setVisible(false); // make suit visible
+			buttonSpade2.setVisible(false); // make suit visible
+			buttonClub2.setVisible(false); // make suit visible
+
 		}
-		else if(suit == "Spades") {
-			buttonSpade2.setVisible(true);
+		else if(suit.equals("Spades")) {
+			buttonSpade2.setVisible(true); // make suit visible
+			
+			buttonDiamond2.setVisible(false); // make suit visible
+			buttonHeart2.setVisible(false); // make suit visible
+			buttonClub2.setVisible(false); // make suit visible
+
+			
 		}
-		else if(suit == "Clubs") {
-			buttonClub2.setVisible(true);
+		else if(suit.equals("Clubs")) {
+			buttonClub2.setVisible(true); // make suit visible
+			
+			buttonSpade2.setVisible(false); // make suit visible
+			buttonDiamond2.setVisible(false); // make suit visible
+			buttonHeart2.setVisible(false); // make suit visible
+
 		}
-	
 		popHand.pop();
 		//card3
 		tokenized = (popHand.getFirst()).toString().split(" ");
 		rank = tokenized[0];
 		suit = tokenized[1];
-		if(rank == "1") {
+		if(rank.equals("1")) {
 			TopNumber3.setText("A");
 			BottomNumber3.setText("A");
 		}
-		else if(rank == "11") {
+		else if(rank.equals("11")) {
 			TopNumber3.setText("J");
 			BottomNumber3.setText("J");
 		}
-		else if(rank == "12") {
+		else if(rank.equals("12")) {
 			TopNumber3.setText("Q");
 			BottomNumber3.setText("Q");
 		}
-		else if(rank == "13") {
+		else if(rank.equals("13")) {
 			TopNumber3.setText("K");
 			BottomNumber3.setText("K");
 		}
@@ -267,38 +308,58 @@ public class PokerController {
 		card3.setVisible(true);
 		TopNumber3.setVisible(true);
 		BottomNumber3.setVisible(true);
-		if(suit == "Hearts") {
-			buttonHeart3.setVisible(true);
+		if(suit.equals("Hearts")) {
+			buttonHeart3.setVisible(true); // make suit visible
+			
+			buttonDiamond3.setVisible(false); // make suit visible
+			buttonSpade3.setVisible(false); // make suit visible
+			buttonClub3.setVisible(false); // make suit visible
+
 		}
-		else if(suit == "Diamonds") {
-			buttonDiamond3.setVisible(true);
+		else if(suit.equals("Diamonds")) {
+			buttonDiamond3.setVisible(true); // make suit visible
+			
+			buttonHeart3.setVisible(false); // make suit visible
+			buttonSpade3.setVisible(false); // make suit visible
+			buttonClub3.setVisible(false); // make suit visible
+
 		}
-		else if(suit == "Spades") {
-			buttonSpade3.setVisible(true);
+		else if(suit.equals("Spades")) {
+			buttonSpade3.setVisible(true); // make suit visible
+			
+			buttonDiamond3.setVisible(false); // make suit visible
+			buttonHeart3.setVisible(false); // make suit visible
+			buttonClub3.setVisible(false); // make suit visible
+
+			
 		}
-		else if(suit == "Clubs") {
-			buttonClub3.setVisible(true);
+		else if(suit.equals("Clubs")) {
+			buttonClub3.setVisible(true); // make suit visible
+			
+			buttonSpade3.setVisible(false); // make suit visible
+			buttonDiamond3.setVisible(false); // make suit visible
+			buttonHeart3.setVisible(false); // make suit visible
+
 		}
-		
 		
 		popHand.pop();
 		//card4
 		tokenized = (popHand.getFirst()).toString().split(" ");
 		rank = tokenized[0];
 		suit = tokenized[1];
-		if(rank == "1") {
+		if(rank.equals("1")) {
 			TopNumber4.setText("A");
 			BottomNumber4.setText("A");
 		}
-		else if(rank == "11") {
+		else if(rank.equals("11")) {
 			TopNumber4.setText("J");
 			BottomNumber4.setText("J");
 		}
-		else if(rank == "12") {
+		else if(rank.equals("12")) {
 			TopNumber4.setText("Q");
 			BottomNumber4.setText("Q");
 		}
-		else if(rank == "13") {
+		else if(rank.equals("13")) {
 			TopNumber4.setText("K");
 			BottomNumber4.setText("K");
 		}
@@ -309,37 +370,57 @@ public class PokerController {
 		card4.setVisible(true);
 		TopNumber4.setVisible(true);
 		BottomNumber4.setVisible(true);
-		if(suit == "Hearts") {
-			buttonHeart4.setVisible(true);
+		if(suit.equals("Hearts")) {
+			buttonHeart4.setVisible(true); // make suit visible
+			
+			buttonDiamond4.setVisible(false); // make suit visible
+			buttonSpade4.setVisible(false); // make suit visible
+			buttonClub4.setVisible(false); // make suit visible
+
 		}
-		else if(suit == "Diamonds") {
-			buttonDiamond4.setVisible(true);
+		else if(suit.equals("Diamonds")) {
+			buttonDiamond4.setVisible(true); // make suit visible
+			
+			buttonHeart4.setVisible(false); // make suit visible
+			buttonSpade4.setVisible(false); // make suit visible
+			buttonClub4.setVisible(false); // make suit visible
+
 		}
-		else if(suit == "Spades") {
-			buttonSpade4.setVisible(true);
+		else if(suit.equals("Spades")) {
+			buttonSpade4.setVisible(true); // make suit visible
+			
+			buttonDiamond4.setVisible(false); // make suit visible
+			buttonHeart4.setVisible(false); // make suit visible
+			buttonClub4.setVisible(false); // make suit visible
+
+			
 		}
-		else if(suit == "Clubs") {
-			buttonClub4.setVisible(true);
+		else if(suit.equals("Clubs")) {
+			buttonClub4.setVisible(true); // make suit visible
+			
+			buttonSpade4.setVisible(false); // make suit visible
+			buttonDiamond4.setVisible(false); // make suit visible
+			buttonHeart4.setVisible(false); // make suit visible
+
 		}
-		
 		popHand.pop();
 		//card5
 		tokenized = (popHand.getFirst()).toString().split(" ");
 		rank = tokenized[0];
 		suit = tokenized[1];
-		if(rank == "1") {
+		if(rank.equals("1")) {
 			TopNumber5.setText("A");
 			BottomNumber5.setText("A");
 		}
-		else if(rank == "11") {
+		else if(rank.equals("11")) {
 			TopNumber5.setText("J");
 			BottomNumber5.setText("J");
 		}
-		else if(rank == "12") {
+		else if(rank.equals("12")) {
 			TopNumber5.setText("Q");
 			BottomNumber5.setText("Q");
 		}
-		else if(rank == "13") {
+		else if(rank.equals("13")) {
 			TopNumber5.setText("K");
 			BottomNumber5.setText("K");
 		}
@@ -350,22 +431,45 @@ public class PokerController {
 		card5.setVisible(true);
 		TopNumber5.setVisible(true);
 		BottomNumber5.setVisible(true);
-		if(suit == "Hearts") {
-			buttonHeart5.setVisible(true);
+		if(suit.equals("Hearts")) {
+			buttonHeart5.setVisible(true); // make suit visible
+			
+			buttonDiamond5.setVisible(false); // make suit visible
+			buttonSpade5.setVisible(false); // make suit visible
+			buttonClub5.setVisible(false); // make suit visible
+
 		}
-		else if(suit == "Diamonds") {
-			buttonDiamond5.setVisible(true);
+		else if(suit.equals("Diamonds")) {
+			buttonDiamond5.setVisible(true); // make suit visible
+			
+			buttonHeart5.setVisible(false); // make suit visible
+			buttonSpade5.setVisible(false); // make suit visible
+			buttonClub5.setVisible(false); // make suit visible
+
 		}
-		else if(suit == "Spades") {
-			buttonSpade5.setVisible(true);
+		else if(suit.equals("Spades")) {
+			buttonSpade5.setVisible(true); // make suit visible
+			
+			buttonDiamond5.setVisible(false); // make suit visible
+			buttonHeart5.setVisible(false); // make suit visible
+			buttonClub5.setVisible(false); // make suit visible
+
+			
 		}
-		else if(suit == "Clubs") {
-			buttonClub5.setVisible(true);
+		else if(suit.equals("Clubs")) {
+			buttonClub5.setVisible(true); // make suit visible
+			
+			buttonSpade5.setVisible(false); // make suit visible
+			buttonDiamond5.setVisible(false); // make suit visible
+			buttonHeart5.setVisible(false); // make suit visible
+
 		}
-		
 		popHand.pop();
 		
 		statusLabel.setText(victory);
 			
 	}
+	
+
+	
 }
