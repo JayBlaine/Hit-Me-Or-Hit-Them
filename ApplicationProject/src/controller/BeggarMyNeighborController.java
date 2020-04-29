@@ -1,4 +1,4 @@
-package application;
+package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +19,7 @@ import java.util.ResourceBundle;
 
 import com.sun.javafx.css.StyleManager;
 
+import application.Main;
 import backend.Card;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
@@ -455,10 +456,10 @@ public class BeggarMyNeighborController implements Initializable{
 		Label label= new Label("\tStart the game by flipping the card and putting it in the middle of the table. If the card has a rank of 2 to 10, the next person of CPU will flip their card and place it in the middle.\r\n" + 
 				"\r\n" + 
 				"\tWhen a face card or an Ace is flipped up, the next player must pay an \"honor\" according to the following:\r\n" + 
-				"[•]\tIf an Ace is played, the next player must turn over four cards, one at a time.\r\n" + 
-				"[•]\tIf a King is played, the next player must turn over three cards, one at a time.\r\n" + 
-				"[•]\tIf a Queen is played, the next player must turn over two cards, one at a time.\r\n" + 
-				"[•]\tIf a Jack is played, the next player must turn over one card.\r\n\n" + 
+				"[ï¿½]\tIf an Ace is played, the next player must turn over four cards, one at a time.\r\n" + 
+				"[ï¿½]\tIf a King is played, the next player must turn over three cards, one at a time.\r\n" + 
+				"[ï¿½]\tIf a Queen is played, the next player must turn over two cards, one at a time.\r\n" + 
+				"[ï¿½]\tIf a Jack is played, the next player must turn over one card.\r\n\n" + 
 				"\tIf all of the cards in the honor are number cards, the player who played the court card collects all of the cards in the middle of the table. However, if one of the cards in the honor is a court card, the player paying the honor stops immediately and the turn goes to the next player and they must pay an honor based on the protocol above. If that honor is paid with only number cards, the cards in the middle of the table are collected by the last player who played a court card.\r\n" + 
 				"\r\n" + 
 				"\tThis continues until one player wins the pile. That player then puts the pile at the bottom of his or her stack, face down. If a player runs out of cards then they lose!\r\n" + 

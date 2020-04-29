@@ -3,7 +3,7 @@
  * PokerController.java creates a functional GUI and acts as the controller to Poker.java's model and Poker.fxml's view.
  */
 
-package application;
+package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,6 +13,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Random;
 
+import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +26,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import model.Poker;
 import backend.Card;
 
 public class PokerController {
