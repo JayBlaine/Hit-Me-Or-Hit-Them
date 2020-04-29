@@ -85,6 +85,7 @@ public class SlapJackController
 		Card.shuffleDeck(startingDeck);									//shuffle deck
 		player = Card.dealCards(startingDeck, 26);						//give player deck 26 cards
 		computer = Card.dealCards(startingDeck, 26);					//give CPU deck 26 cards
+		cpu.setDifficulty(1);
 		
     }
 	
@@ -125,7 +126,7 @@ public class SlapJackController
 		{	
 			actualSlap = System.currentTimeMillis();					//then get the time of how long it took to slap and set it to actual slap
 			
-			if(actualSlap - startSlap < cpu.getDifficulty() * 1000)		//if the time of slap is smaller than the CPU difficulty; if Player gets the cards, beat CPU.
+			if(actualSlap - startSlap < cpu.getResponseTime() * 1000)		//if the time of slap is smaller than the CPU difficulty; if Player gets the cards, beat CPU.
 			{
 				while(!centerPile.isEmpty())							//while the center pile is empty
 				{
