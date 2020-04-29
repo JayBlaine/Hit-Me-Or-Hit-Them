@@ -19,10 +19,10 @@ import javafx.scene.shape.Rectangle;
 import model.Card;
 import model.Computer;
 
-/*
- * @author: nqg320
- * 			Jarrod Ragsdale
- * 			Handles slapjack logic/ui
+/**
+ * @author Jarrod Ragsdale
+ * 		   nqg320
+ * 		   Handles slapjack logic/ui
  */
 public class SlapJackController 
 {
