@@ -196,6 +196,8 @@ public class PokerController {
 		else if(suit == "Clubs") {
 			buttonClub1.setVisible(true); // make suit visible
 		}
+		popHand.pop();
+		
 		//card2
 		tokenized = (popHand.getFirst()).toString().split(" "); 
 		rank = tokenized[0]; 
