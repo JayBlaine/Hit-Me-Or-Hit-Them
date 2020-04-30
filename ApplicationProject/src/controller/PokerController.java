@@ -228,15 +228,15 @@ public class PokerController {
 			TopNumber2.setText("A");
 			BottomNumber2.setText("A");
 		}
-		else if(rank == "11") {
+		else if(rank.equals("11")) {
 			TopNumber2.setText("J");
 			BottomNumber2.setText("J");
 		}
-		else if(rank == "12") {
+		else if(rank.equals("12")) {
 			TopNumber2.setText("Q");
 			BottomNumber2.setText("Q");
 		}
-		else if(rank == "13") {
+		else if(rank.equals("13")) {
 			TopNumber2.setText("K");
 			BottomNumber2.setText("K");
 		}
