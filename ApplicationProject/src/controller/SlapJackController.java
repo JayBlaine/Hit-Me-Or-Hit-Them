@@ -162,7 +162,7 @@ public class SlapJackController
 				
 				stackCount = 0;											//initializing - resetting the stack count to be zero
 				lblStackSize.setText(Integer.toString(stackCount));		//setting label to current stack size
-				lblMsg.setText("Your opponenet beat you!");			//setting label text
+				lblMsg.setText("Your opponent beat you!");			//setting label text
 				lblDeck.setText("");
 				lblDeck2.setText("");
 			}
