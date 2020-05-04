@@ -23,11 +23,11 @@ public class Computer {
 	public void setDifficulty(int newDiff) {
 		switch (newDiff) {
 			case 1:
-				responseTime = implementChaos + 1.5;						//set response time to random number (slow)
+				responseTime =  2;						//set response time to random number (slow)
 			case 2:
-				responseTime = (implementChaos * 0.5) + 1;			//set response time to random number(decent)
+				responseTime = 1.5;			//set response time to random number(decent)
 			case 3:
-				responseTime = (implementChaos * 0.33) + 0.5;			//set response time to random number (fast)
+				responseTime = 1;			//set response time to random number (fast)
 			}
 																		//No need for default, only 1,2,3 are possible
 	}
