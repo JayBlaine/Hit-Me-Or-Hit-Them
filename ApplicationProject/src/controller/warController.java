@@ -95,6 +95,10 @@ public class warController
 		Card.shuffleDeck(deck);
 		player=Card.dealCards(deck, 26);
 		computer=Card.dealCards(deck, 26);
+		for(String str:player)
+		{
+			System.out.println(str);
+		}
 		lblpDeck.setText("26");
 		lbldDeck.setText("26");
 	
@@ -319,6 +323,7 @@ public class warController
 	@FXML
 	private void collectHandle(ActionEvent event)
     {
+		
 		int playerWins=War.checkWinner(lblp.getText(),lbld.getText()); //Checking who has the higher value flipped card
 		
 		if (playerWins==2) //The computer and player flipped equal value cards, so we enable btnWar and btnCollectWar so we can do the war logic -EMN 03-21-2020

@@ -42,8 +42,24 @@ public class War
 		int intcomCard=0;
 		
 		//Removing the suit value because we focus only on the rank value -EMN 03-21-2020
-		playerCard=player.substring(0,1);
-		comCard=computer.substring(0,1);
+		
+		if(player.length()==2 || player.length()>3)
+		{
+			playerCard=player.substring(0,1);
+		}
+		else if(player.length()==3)
+		{
+			playerCard=player.substring(0,2);
+		}
+		
+		if(computer.length()==2 || computer.length()>3)
+		{
+			comCard=computer.substring(0,1);
+		}
+		else if(computer.length()==3)
+		{
+			comCard=computer.substring(0,2);
+		}
 		
 		//Checking if the player card is any of the face cards -EMN 03-21-2020
 		if(playerCard.equals("A")|| playerCard.equals("K")||playerCard.equals("Q")||playerCard.equals("J"))
@@ -109,9 +125,9 @@ public class War
 		
 		else //Player has a numerical value card -EMN 03-21-2020
 		{
+			
 			intPlayerCard=Integer.parseInt(playerCard); //Getting the numerical value of the string -EMN 03-21-2020
 
-			
 			if(comCard.equals("A")||comCard.equals("K")||comCard.equals("Q")||comCard.equals("J")) //Checking if the computer has a face value card -EMN 03-21-2020
 			{
 				playerWins=0; //If the computer has a face value card they automatically win -EMN 03-21-2020
